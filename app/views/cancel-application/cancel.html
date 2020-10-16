@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO Withdrawal
+{% endblock %}
+
+
+{% block main %}
+
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+	  
+	  <div class="govuk-grid-column-two-thirds">
+		  <a href="index.html" class="govuk-back-link">Back</a>
+	  </div>
+  </div>
+</div>
+
+{% block content %}
+<main class="govuk-main-wrapper " id="main-content" role="main">
+
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+	  
+	  <div class="govuk-grid-column-two-thirds">		  
+            
+            <h1 class="govuk-heading-xl">Are you sure you want to cancel your application to assess this standard?</h1>
+            
+            <div class="govuk-warning-text">
+			  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+			  <strong class="govuk-warning-text__text">
+			    <span class="govuk-warning-text__assistive">Warning</span>
+			    If you select yes, we will delete the answers you’ve entered as part of your application to assess standard [XXXXX]
+			  </strong>
+			</div>
+
+
+                    <form>
+                        <input type="hidden" id="Id" name="Id" value="fd6312ff-a912-41e7-98d7-d18bebbdac20">
+                        <input type="hidden" id="sequenceNo" name="sequenceNo" value="2">
+                        <div class="govuk-form-group">
+
+  <div class="govuk-radios govuk-radios--inlin">
+    
+               
+        
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="contact-details-status" name="contact-details-status" type="radio" value="true">
+          <label class="govuk-label govuk-radios__label" for="contact-details-status">
+        Yes
+      </label>
+          
+        </div>
+        
+                
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="contact-details-status-2" name="contact-details-status" type="radio" value="false">
+          <label class="govuk-label govuk-radios__label" for="contact-details-status-2">
+        No
+      </label>
+          
+        </div>
+        
+        
+       </div>
+
+</div>
+                        <div class="govuk-form-group">
+                            <a type="submit" class="govuk-button" href="success.html">
+                                Save and continue
+                            </a>
+                        </div>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GIkA9BDwYlHgWiHuFkX-xsUhetUe045ugujrKJNwM1I4TT2jpq6YpSKd9XSvKhjv50rpSaQVmggDy1JKc7UbQ5bfpOHCmyUAbeXsg6Uudnpx7k8lMraIPm5_gDt7i8oXMIyo9pCllJNqFSbV8e5FiuNhVbEgo122rZj8Zld4SEyS1ycga1c6uVFZKmx_MVrFQ"></form>
+        </div>
+        
+  </div>
+</div>
+
+</main>
+
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO Withdrawal
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+<main class="govuk-main-wrapper " id="main-content" role="main">
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+	  
+	  <div class="govuk-grid-column-two-thirds">
+            
+            <span class="govuk-caption-xl">
+                ST0264 Carpentry and joinery
+            </span>
+            <h1 class="govuk-heading-xl">Application overview</h1>
+
+
+                <ul class="govuk-list">
+                        <li>
+                            <h2 id="476873fa-bd86-4307-af3f-297bdd5c3ca0" class="govuk-heading-m govuk-!-margin-bottom-2">
+                                Apply to assess a standard
+                            </h2>
+                            <span id="company-details-hint" class="govuk-hint">
+                                0 of 37 questions completed
+                            </span>
+                                <a class="govuk-link" href="#">
+                                    Go to apply to assess a standard
+                                </a>
+                        </li>
+                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                </ul>
+                    <form action="/Application/fd6312ff-a912-41e7-98d7-d18bebbdac20/Submit/2" method="post">
+                        <input type="hidden" id="Id" name="Id" value="fd6312ff-a912-41e7-98d7-d18bebbdac20">
+                        <input type="hidden" id="sequenceNo" name="sequenceNo" value="2">
+                        <div class="govuk-form-group" style="margin-bottom: 0;">
+                            <button type="submit" class="govuk-button">
+                                Submit
+                            </button>
+                        </div>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GIkA9BDwYlHgWiHuFkX-xsUhetUe045ugujrKJNwM1I4TT2jpq6YpSKd9XSvKhjv50rpSaQVmggDy1JKc7UbQ5bfpOHCmyUAbeXsg6Uudnpx7k8lMraIPm5_gDt7i8oXMIyo9pCllJNqFSbV8e5FiuNhVbEgo122rZj8Zld4SEyS1ycga1c6uVFZKmx_MVrFQ"></form>
+                   
+                   
+                    <p><a class="govuk-link" href="change.html">Change to a different standard</a><p>
+                   <p><a class="govuk-link" href="cancel-hard.html">Cancel this standard </a></p>
+                    
+        </div>
+        
+  </div>
+</div>
+
+</main>
+
+{% endblock %}
+{% endblock %}
