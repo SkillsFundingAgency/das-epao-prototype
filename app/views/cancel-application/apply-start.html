@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO Withdrawal
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+	  
+	  <div class="govuk-grid-column-two-thirds">
+		  <a href="index.html" class="govuk-back-link">Back</a>
+	  </div>
+  </div>
+</div>
+
+{% block content %}
+<main class="govuk-main-wrapper " id="main-content" role="main">
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+	  
+	  <div class="govuk-grid-column-two-thirds">
+            
+            
+            <form action="/Standard/dfd750f7-c120-4afb-b55b-ed2836c5780e" method="post">
+                <div class="govuk-form-group ">
+                    <h1 class="govuk-label-wrapper">
+                        <label class="govuk-label govuk-label--xl" for="standard-name">
+                            What standard are you applying for?
+                        </label>
+                    </h1>
+
+                    <span id="standard-hint" class="govuk-hint">
+                        Enter 3 or more characters to search. For example, financial adviser
+                    </span>
+
+
+                    <input class="govuk-input govuk-input--width-20 ui-autocomplete-input " id="standard-name" name="StandardToFind" type="text" value="" autocomplete="off" maxlength="10000">
+                </div>
+
+
+                <div class="govuk-form-group">
+                    <button type="submit" class="govuk-button js-choose-standard-button">
+                        Continue
+                    </button>
+                </div>
+
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8CpfLzvPK2FCrUqq6QsSKnTba3u8X5hrpuORz1fGE3ZqQmLs7yRqOCoWfttk3nCBSuqwFn_8ZHr0W-huNArQQiGt81_I3OQ5qXtxRhTZ0iEq4GTSo4AsietcBXMV7GkGJgTz3Z2m5OXZ_TNHQKzzfVzVHLhToKwx3MRuNEPuctNLtDP9LcXNO3SYVz7dIjqIcg"></form>
+                    
+        </div>
+        
+  </div>
+</div>
+
+</main>
+
+{% endblock %}
+{% endblock %}

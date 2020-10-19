@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO Withdrawal
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+<main class="govuk-main-wrapper " id="main-content" role="main">
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+	  
+	  <div class="govuk-grid-column-two-thirds">
+                <span class="govuk-caption-xl">
+                    ST0264 Carpentry and joinery
+                </span>
+
+            <h1 class="govuk-heading-xl">Application feedback</h1>
+
+
+                <p class="govuk-body">The second part of your application to join the Register of end-point assessment organisations has been rejected</p>
+
+            <p class="govuk-body">Go into each question to view comments, where you will have an opportunity to give more information.</p>
+
+            <ol class="app-task-list">
+                    <li>
+                        <h2 id="476873fa-bd86-4307-af3f-297bdd5c3ca0" class="app-task-list__section">Apply to assess a standard</h2>
+                                <ul class="app-task-list__items app-task-list__items--no-number" style="padding-left: 0;">
+                                        <li class="app-task-list__item">
+                                            <span class="app-task-list__task-name">
+                                                <a aria-describedby="feedback-completed" class="govuk-link" href="/Application/fd6312ff-a912-41e7-98d7-d18bebbdac20/Sequences/2/Sections/4/Pages/25?__redirectAction=Feedback">
+                                                    Internal audit policy
+                                                </a>
+                                            </span>
+                                        </li>
+                                </ul>
+                    </li>
+            </ol>
+
+                <div>
+                    <form action="/Application/fd6312ff-a912-41e7-98d7-d18bebbdac20/Submit/2" method="post">
+                        <div class="govuk-form-group">
+                            <button type="submit" class="govuk-button">
+                                Submit application
+                            </button>
+                        </div>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GIkA9BDwYlHgWiHuFkX-xsO89eomzPToNMJNhKFeA-n1REPoSfzjC0khCZVvfTPzc_8SnpPtglqd07dUHdb7H4it32wNGNJbhoUpK-duDY4CiG7-VQBflHCXobfU6uZysVrWBmTU_cQqIoapWCxJn7UNDzjvb8hvaH5v4CSYdQstKgMw9YlAXx_chXnQRY0-g">
+                    
+                    <p><a class="govuk-link" href="cancel.html">Cancel your application for this standard</a></p>
+                    
+                    </form>
+                    
+                    
+                </div>
+        </div>
+        
+  </div>
+</div>
+
+</main>
+
+{% endblock %}
+{% endblock %}

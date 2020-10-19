@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO Withdrawal
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+<main class="govuk-main-wrapper " id="main-content" role="main">
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+	  
+	  <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-panel govuk-panel--confirmation">
+                <h1 class="govuk-panel__title">You’ve cancelled your application to assess standard [XXXXXXX]</h1>
+            </div>
+            
+            <p class="govuk-body">We've sent you an email to confirm that your application has been cancelled.</p>
+
+            <h3 class="govuk-heading-m">What happens next</h3>
+
+            <p class="govuk-body">Once we've reviewed your application, we'll email the outcome to you. If any of your answers need clarification, we'll send you a notification by email.</p>
+            
+            
+            <p class="govuk-body govuk-!-font-size-14">--(if new user)--</p>
+			<p class="govuk-body">Your application for stage 1 is still valid. You can now <a href="#">choose another standard</a> to apply for. 
+
+
+			<p class="govuk-body govuk-!-font-size-14">--(elseIf existing EPAO)--</p>
+			<p class="govuk-body">Your application for stage 1 is still valid. You can either:</p>
+			
+			<ul class="govuk-list">
+				<li><a class="govuk-link" href="#">choose another standard</a> to apply for</li>
+				<li><a class="govuk-link" href="#">go back to your dashboard</a></li>
+			</ul>
+
+			<p class="govuk-body govuk-!-font-size-14">--(end)--</p>
+
+            <p class="govuk-body"><a href="https://www.smartsurvey.co.uk/s/preview/apply-transaction-complete/96ACE3F403A24C262D02A0EA6D0FA7" target="_blank" class="govuk-link">What do you think of this service?</a> (Takes 60 seconds)</p>
+        </div>
+        
+  </div>
+</div>
+
+</main>
+
+{% endblock %}
+{% endblock %}
