@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO Withdrawal
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+
+<div class="govuk-width-container">
+        
+<a class="govuk-back-link" href="applications-tabs.html">Back</a>
+
+<main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-xl">Application overview</h1>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Application reference</dt>
+                            <dd class="govuk-summary-list__value">AAD100080</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Details</dt>
+                            <dd class="govuk-summary-list__value">If standard:		
+																	[Standard name] ([Code])<br>
+																	If register:	
+																	Withdrawal from register</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Registered name</dt>
+                            <dd class="govuk-summary-list__value">BCS, The Chartered Institute for IT</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">UKPRN</dt>
+                            <dd class="govuk-summary-list__value">10022712</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Contact details</dt>
+                            <dd class="govuk-summary-list__value">Jay smith<br><a href="#" class="govuk-link">jay.smith@gmail.com</dd>
+                        </div>
+                                    </dl>
+
+                <ul class="govuk-list">
+                        <li>
+                            <h2 class="govuk-heading-m">
+                                <a class="govuk-link" href="#">
+                                    Notify to withdraw a standard
+                                </a>
+                            </h2>
+                            <span id="company-details-hint" class="govuk-hint">
+                                4 of 4 questions completed
+                            </span>
+
+
+                            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                        </li>
+                </ul>
+            
+            <p class="govuk-body">
+                <a class="govuk-link" href="applications-tabs.html">Return to withdrawal applications</a>
+            </p>
+        </div>`
+    </div>
+</main>
+    </div>
+
+
+{% endblock %}
+{% endblock %}

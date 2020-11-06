@@ -71,3 +71,15 @@ $govuk-assets-path: '/govuk/assets/';
 	
 	
 }
+
+
+//small table EPAO Withdraw
+.govuk-table--small {
+    font-size: 14px;
+}
+
+@media (min-width: 40.0625em) {
+	.govuk-table--small {
+	    font-size: 16px;
+	}
+}
