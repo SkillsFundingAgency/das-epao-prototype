@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO Withdrawal
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+<main class="govuk-main-wrapper " id="main-content" role="main">
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+	  
+	  <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-panel govuk-panel--confirmation">
+                <h1 class="govuk-panel__title">You've asked for more information</h1>
+            </div>
+            
+            <p class="govuk-body">We’ve sent your comments to [organisation name].</p>
+
+            <h3 class="govuk-heading-m">What happens next</h3>            
+            
+			<p class="govuk-body">Once [organisation name] clarifies and resubmits their withdrawal, you’ll need to review their answers again.</p>
+
+
+			<ul class="govuk-list govuk-list--bullet">
+				<li><a class="govuk-link" href="#">Return to withdrawal applications</a></li>
+				<li><a class="govuk-link" target="_blank" href="#">What do you think of this service?</a> (takes 30 seconds)</li>
+			</ul>
+			
+        </div>
+        
+  </div>
+</div>
+
+</main>
+
+{% endblock %}
+{% endblock %}
