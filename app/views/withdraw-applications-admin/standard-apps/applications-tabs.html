@@ -1,0 +1,338 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO Withdrawal application tabs
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+<main class="govuk-main-wrapper " id="main-content" role="main">
+
+<div class="govuk-width-container">
+	
+	
+	<a class="govuk-back-link" href="../index.html" style="margin: -20px 0 40px 0;">Back</a>
+
+	<h1 class="govuk-heading-xl">Standard applications</h1>
+	
+	
+	<!-- TABS -->
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#new">
+        New (3)
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#in-progress">
+        In progress (2)
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#feedback">
+        Feedback (4)
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#approved">
+        Approved (5)
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#cancelled">
+        Cancelled (3)
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel" id="new">
+    <h2 class="govuk-heading-l">New</h2>
+    
+    <div class="govuk-grid-row">
+	    <div class="govuk-grid-column-one-half"><p class="govuk-body">Showing 1 - 3 of 3<text> applications</text></p></div>
+    </div>
+	    
+    <table class="govuk-table govuk-table--small">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Organisation</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Reference</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Name of Standard</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Date submitted</a></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0257</td>
+          <td class="govuk-table__cell">Large goods vehicle (LGV) driver</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0453</td>
+          <td class="govuk-table__cell">Water treatment technician</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0474</td>
+          <td class="govuk-table__cell">Motor finance specialist</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="das-flex-space-around">
+            <div>
+                <select class="in-progress-per-page govuk-select govuk-!-margin-right-2" data-val="true" data-val-required="The Items Per Page field is required." id="ItemsPerPage" name="ItemsPerPage"><option selected="selected" value="10">10</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="500">500</option>
+</select>
+                <label for="ApplicationsPerPage" class="govuk-body">Applications per page</label>
+            </div>
+        </div>
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="in-progress">
+    <h2 class="govuk-heading-l">In Progress</h2>
+    
+    <div class="govuk-grid-row">
+	    <div class="govuk-grid-column-one-half"><p class="govuk-body">Showing 1 - 2 of 2<text> applications</text></p></div>
+    </div>
+    <table class="govuk-table govuk-table--small">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Organisation</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Reference</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Name of Standard</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Status</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Date</a></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0223</td>
+          <td class="govuk-table__cell">Arborist</td>
+          <td class="govuk-table__cell">Resubmitted</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0155</td>
+          <td class="govuk-table__cell">Gas engineering operative	</td>
+          <td class="govuk-table__cell">Submitted</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="das-flex-space-around">
+            <div>
+                <select class="in-progress-per-page govuk-select govuk-!-margin-right-2" data-val="true" data-val-required="The Items Per Page field is required." id="ItemsPerPage" name="ItemsPerPage"><option selected="selected" value="10">10</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="500">500</option>
+</select>
+                <label for="ApplicationsPerPage" class="govuk-body">Applications per page</label>
+            </div>
+        </div>
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="feedback">
+    <h2 class="govuk-heading-l">Feedback</h2>
+    <div class="govuk-grid-row">
+	    <div class="govuk-grid-column-one-half"><p class="govuk-body">Showing 1 - 4 of 4<text> applications</text></p></div>
+    </div>	    
+    <table class="govuk-table govuk-table--small">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Organisation</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Reference</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Name of Standard</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Status</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Date</a></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="feedback-application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0427</td>
+          <td class="govuk-table__cell">Marine Pilot</td>
+          <td class="govuk-table__cell">Feedback received</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="feedback-application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0013</td>
+          <td class="govuk-table__cell">Aerospace software development engineer (degree)</td>
+          <td class="govuk-table__cell">Feedback sent</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="feedback-application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0547</td>
+          <td class="govuk-table__cell">Retail leadership degree apprenticeship</td>
+          <td class="govuk-table__cell">Feedback sent</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="feedback-application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0767</td>
+          <td class="govuk-table__cell">Water environment worker</td>
+          <td class="govuk-table__cell">Feedback sent</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="das-flex-space-around">
+            <div>
+                <select class="in-progress-per-page govuk-select govuk-!-margin-right-2" data-val="true" data-val-required="The Items Per Page field is required." id="ItemsPerPage" name="ItemsPerPage"><option selected="selected" value="10">10</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="500">500</option>
+</select>
+                <label for="ApplicationsPerPage" class="govuk-body">Applications per page</label>
+            </div>
+        </div>
+
+  </div>
+  
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="approved">
+    <h2 class="govuk-heading-l">Approved</h2>
+    <div class="govuk-grid-row">
+	    <div class="govuk-grid-column-one-half"><p class="govuk-body">Showing 1 - 5 of 5<text> applications</text></p></div>
+    </div>
+	    
+    <table class="govuk-table govuk-table--small">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Organisation</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Reference</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Name of Standard</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Date approved</a></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="feedback-application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0427</td>
+          <td class="govuk-table__cell">Marine Pilot</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="feedback-application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0013</td>
+          <td class="govuk-table__cell">Aerospace software development engineer (degree)</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="feedback-application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0547</td>
+          <td class="govuk-table__cell">Retail leadership degree apprenticeship</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="feedback-application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0767</td>
+          <td class="govuk-table__cell">Water environment worker</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="feedback-application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0767</td>
+          <td class="govuk-table__cell">Water environment worker</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    
+    <div class="das-flex-space-around">
+            <div>
+                <select class="in-progress-per-page govuk-select govuk-!-margin-right-2" data-val="true" data-val-required="The Items Per Page field is required." id="ItemsPerPage" name="ItemsPerPage"><option selected="selected" value="10">10</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="500">500</option>
+</select>
+                <label for="ApplicationsPerPage" class="govuk-body">Applications per page</label>
+            </div>
+        </div>
+
+  </div>
+  
+  
+  
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="cancelled">
+    <h2 class="govuk-heading-l">Cancelled</h2>
+    <div class="govuk-grid-row">
+	    <div class="govuk-grid-column-one-half"><p class="govuk-body">Showing 1 - 3 of 3<text> applications</text></p></div>
+    </div>
+	    
+    <table class="govuk-table govuk-table--small">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Organisation</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Reference</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Name of Standard</a></th>
+          <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link">Date cancelled</a></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0257</td>
+          <td class="govuk-table__cell">Large goods vehicle (LGV) driver</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0453</td>
+          <td class="govuk-table__cell">Water treatment technician</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="application-overview.html" class="govuk-link">Organisation name</a></td>
+          <td class="govuk-table__cell">ST0474</td>
+          <td class="govuk-table__cell">Motor finance specialist</td>
+          <td class="govuk-table__cell">DD Month Year</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    
+    <div class="das-flex-space-around">
+            <div>
+                <select class="in-progress-per-page govuk-select govuk-!-margin-right-2" data-val="true" data-val-required="The Items Per Page field is required." id="ItemsPerPage" name="ItemsPerPage"><option selected="selected" value="10">10</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="500">500</option>
+</select>
+                <label for="ApplicationsPerPage" class="govuk-body">Applications per page</label>
+            </div>
+        </div>
+
+  </div>
+  
+  
+</div>
+
+<!-- END TABS -->
+  
+  
+</div>
+
+</main>
+
+{% endblock %}
+{% endblock %}
