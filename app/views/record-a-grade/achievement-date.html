@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO record a grade
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">What is the apprentice achievement date?</h1>
+        <p class="govuk-body">The date you determined the apprentice completed the apprenticeship after internal quality assurance.</p>
+      </div>
+    </div>
+
+
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "For example, 15 10 2017"
+  }
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+  </main>
+</div>
+
+
+{% endblock %}
+{% endblock %}
