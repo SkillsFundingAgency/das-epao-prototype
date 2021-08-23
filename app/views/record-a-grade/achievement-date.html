@@ -24,6 +24,8 @@
 
   <main class="govuk-main-wrapper">
 
+    <form method="post" action="/record-a-grade/certificate-receiver">
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">What is the apprentice achievement date?</h1>
@@ -31,7 +33,7 @@
       </div>
     </div>
 
-
+<!-- DATE INPUT -->
 {{ govukDateInput({
   id: "passport-issued",
   namePrefix: "passport-issued",
@@ -45,12 +47,15 @@
     text: "For example, 15 10 2017"
   }
 }) }}
+<!-- END DATE INPUT -->
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
-
+<!-- CTA -->
 {{ govukButton({
   text: "Continue"
 }) }}
+<!-- END CTA -->
+
+</form>
 
   </main>
 </div>

@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO record a grade
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <form method="post" action="employer-address">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Edit the address that you'd like us to send the certificate to</h1>
+
+        <p class="govuk-body">Some employers are not open due to the coronavirus (COVID-19) outbreak. 
+          You can temporarily choose to send certificates to the apprentice, employer or training provider.
+        </p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="two-thirds">
+            Employer name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text" value="Tesco Limited"></div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="full">
+            Building and street
+          </label>
+          <input class="govuk-input govuk-!-width-full" id="full" name="full" type="text" value="14 Thorne House"></div>
+
+        <div class="govuk-form-group">
+          <input class="govuk-input govuk-!-width-full" id="full" name="full" type="text" value="Townsend Avenue"></div>
+
+        <div class="govuk-form-group">
+          <input class="govuk-input govuk-!-width-full" id="full" name="full" type="text"></div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="two-thirds">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text" value="Coventry"></div>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="one-third">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="one-third" name="one-third" type="text" value="CV1 1AB"></div>
+    
+        
+                
+
+
+<!-- CTA -->
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+<!-- END CTA -->
+
+</form>
+
+  </main>
+</div>
+
+
+{% endblock %}
+{% endblock %}

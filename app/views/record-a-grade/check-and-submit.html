@@ -1,0 +1,249 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO record a grade
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <form method="post" action="#">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Check and submit the assessment details</h1>
+        
+      <div class="govuk-inset-text">
+        <h3 class="govuk-heading-m">Please check before submitting</h3>
+        <p class="govuk-body">
+          The apprentice and apprenticeship details will be printed on the certificate.
+        </p>
+        <p class="govuk-body">If the name, standard or level is incorrect, you need to agree on the correct details along with the training provider and the employer. 
+          The training provider needs to then update the Individual Learner Record (ILR).
+        </p>
+      </div>
+
+  <!-- APPRENTICE DETAILS SUMMARY -->
+      <h3 class="govuk-heading-m">Apprentice details</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Given name
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Test
+            </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Family name
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Name1000217921
+            </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                <abbr title="Unique learner number">ULN</abbr>
+            </dt>
+            <dd class="govuk-summary-list__value">
+                1000217921
+            </dd>
+        </div>
+    </dl>
+<!-- END APPRENTICE DETAILS SUMMARY -->
+
+<!-- APPRENTICESHIP DETAILS SUMMARY -->
+      <h3 class="govuk-heading-m">Apprenticeship details</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Standard
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Animal technologist (179)
+            </dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Level
+            </dt>
+            <dd class="govuk-summary-list__value">
+                3
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Version
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <span id="Option" class="govuk-error-message field-validation-valid" data-valmsg-for="Version" data-valmsg-replace="true"></span>
+                1.0
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Grade
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <span id="Option" class="govuk-error-message field-validation-valid" data-valmsg-for="SelectedGrade" data-valmsg-replace="true"></span>
+                Pass
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> grade</span>
+                </a>
+            </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Achievement date                    
+          </dt>
+            <dd class="govuk-summary-list__value">
+                <span id="Option" class="govuk-error-message field-validation-valid" data-valmsg-for="AchievementDate" data-valmsg-replace="true"></span>
+                15 October 2017
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> date</span>
+                </a>
+            </dd>
+        </div>
+    </dl>
+<!-- END APPRENTICESHIP DETAILS SUMMARY -->
+
+<!-- SENDING CERTIFICATE SUMMARY -->
+      <h3 class="govuk-heading-m">We'll send the certificate to</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Certificate receiver
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <span id="Name" class="govuk-error-message field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                Employer
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> certificate receiver</span>
+                </a>
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+              <span id="Name" class="govuk-error-message field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+              Joanna Smith
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> recipient name</span>
+              </a>
+          </dd>
+      </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Department
+            </dt>
+            <dd class="govuk-summary-list__value">
+                    <span>Human resources</span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> department</span>
+                </a>
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Employer
+            </dt>
+            <dd class="govuk-summary-list__value">
+                    <span>Tesco Limited</span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> employer</span>
+                    </a>
+
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <span id="AddressLine1" class="govuk-error-message field-validation-valid" data-valmsg-for="AddressLine1" data-valmsg-replace="true"></span>
+                <span id="City" class="govuk-error-message field-validation-valid" data-valmsg-for="City" data-valmsg-replace="true"></span>
+                <span id="Postcode" class="govuk-error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
+                14 Thorne House<br>
+            Townsend Avenue<br>
+            Coventry<br>
+            CV1 1AB
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> address</span>
+                    </a>
+            </dd>
+        </div>
+    </dl>
+<!-- END SENDING CERTIFICATE SUMMARY -->
+
+
+
+      </div>
+    </div>
+<!-- CTA -->
+{{ govukButton({
+  text: "Confirm and submit"
+}) }}
+<!-- END CTA -->
+
+      </div>
+    </div>
+
+
+
+</form>
+
+  </main>
+</div>
+
+
+{% endblock %}
+{% endblock %}
