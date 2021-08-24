@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO record a grade
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <form method="post" action="provider-confirm">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">What is the recipient's name?</h1>
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="full">
+            Recipient's name
+          </label>
+          <div id="event-name-hint" class="govuk-hint">
+            This is the person at the organisation who will receive the certificate. For example, line manager, apprentice, apprentice coordinator. 
+          </div>
+          <input class="govuk-input govuk-!-width-full" id="full" name="full" type="text"></div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="full">
+              Department (optional)
+            </label>
+            <div id="event-name-hint" class="govuk-hint">
+              Help to make sure the certificate goes to the right person/place in the organisation. For example, human resources. 
+            </div>  
+            <input class="govuk-input govuk-!-width-full" id="full" name="full" type="text"></div>
+
+
+
+<!-- CTA -->
+{{ govukButton({
+  text: "Continue"
+}) }}
+<!-- END CTA -->
+
+</form>
+
+  </main>
+</div>
+
+
+{% endblock %}
+{% endblock %}
