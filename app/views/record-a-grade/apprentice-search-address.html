@@ -30,22 +30,31 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Search for the address that you'd like us to send the certificate to</h1>
 
-        <div class="govuk-form-group">
+        {{ govukInput({
+          label: {
+            text: "Postcode",
+            classes: "govuk-label--m"
+          },
+          classes: "govuk-input--width-10",
+          id: "address-postcode",
+          name: "address-postcode",
+          value: data["address-postcode"]
+        }) }}
 
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="one-third">
-              Postcode
-            </label>
-            <input class="govuk-input govuk-!-width-one-third" id="one-third" name="one-third" type="text"></div>
+
+
+          {{ govukInput({
+              label: {
+                text: "House number or name (optional)",
+                classes: "govuk-label--m",
+                isPageHeading: true
+              },
+              classes: "govuk-input--width-20",
+              id: "street-number-house-name",
+              name: "street-number-house-name",
+              value: data["street-number-house-name"]
+            }) }}
             
-            <div class="govuk-form-group">
-          <label class="govuk-label" for="two-thirds">
-            House number or name (optional)
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text"></div>
-        
-      
-      </div>
     </div>
     </div>
 
@@ -59,7 +68,7 @@
 
 <!-- CTA -->
 {{ govukButton({
-  text: "Continue"
+  text: "Search"
 }) }}
 <!-- END CTA -->
 
