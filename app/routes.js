@@ -6,7 +6,7 @@ const router = express.Router()
 // record-a-grade: who to send certificate to
 router.post('/record-a-grade/send-the-certificate', (req, res) => {
 	if(req.session.data['send-the-certificate'] == 'apprentice'){
-		res.redirect('apprentice-search-address');
+		res.redirect('apprentice-name');
 	} else if(req.session.data['send-the-certificate'] == 'employer'){
         res.redirect('employer-address');
 	} else if(req.session.data['send-the-certificate'] == 'provider'){
@@ -16,7 +16,7 @@ router.post('/record-a-grade/send-the-certificate', (req, res) => {
 
 // record-a-grade: apprentice search address
 router.post('/record-a-grade/apprentice-find-address', function (req, res) {
-	if(req.session.data['street-number-house-name'] == '1'){
+	if(req.session.data['street-number-house-name'] == '14'){
 		res.redirect('apprentice-select-address-1');
 	} else if(req.session.data['street-number-house-name'] == 'test'){
         res.redirect('apprentice-select-address-0');

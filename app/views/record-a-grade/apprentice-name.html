@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO record a grade
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <form method="post" action="apprentice-search-address">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Confirm the recipient's name who we are sending the certificate to</h1>
+        
+      
+        <h2 class="govuk-heading-m">
+          Current recipient's name to be used
+          <span class="govuk-caption-m">
+            This was matched to the ULN provided
+          </span>
+        </h2>
+        <div class="govuk-inset-text">
+          <p class="govuk-body">Joanne Smith
+          </p>
+
+        </div>
+      
+
+<!-- CHECKBOX -->
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label  govuk-!-margin-bottom-6" for="waste">
+                  Yes, use this recipient's name
+                </label>
+              </div>
+            </div>
+<!-- END CHECKBOX -->
+
+<!-- EDIT LINK -->
+<p class="govuk-body"><a href="apprentice-name-edit" class="govuk-link govuk-!-margin-bottom-6">Edit this recipient's name</a></p>
+<!-- END EDIT LINK -->
+
+          </fieldset>
+        </div>
+
+<!-- CTA -->
+{{ govukButton({
+  text: "Continue"
+}) }}
+<!-- END CTA -->
+
+</form>
+
+  </main>
+</div>
+
+
+{% endblock %}
+{% endblock %}
