@@ -31,17 +31,68 @@
         <h1 class="govuk-heading-xl">Confirm where we are sending the certificate</h1>
 
         <div class="govuk-inset-text">
-          <p class="govuk-body"><strong>Joanna Smith</strong><br>
-                                Human resources<br>
-                                Tesco Limited<br>
-                                14 Thorne House<br>
-                                Townsend Avenue<br>
-                                Coventry<br>
-                                CV1 1AB
+          <p class="govuk-body">
+            {{ data['recipient-name'] }}<br>
+            {{ data['dept-name'] }}<br>
+            <!--line one-->
+
+       {% if data['use-this-employer-address'] === 'yes' %}
+       25 Townsville House<br>
+
+       {% else %}
+
+       {{ data['employer-address-line-one'] }}<br>
+
+       {% endif %}
+
+       <!--line one ENDS-->
+
+       <!--line two-->
+
+       {% if data['use-this-employer-address'] === 'yes' %}
+       Townsend Avenue<br>
+
+       {% else %}
+
+       {{ data['employer-address-line-two'] }}<br>
+
+       {% endif %}
+
+       <!--line two ENDS-->
+
+        <!--line town-->
+
+        {% if data['use-this-employer-address'] === 'yes' %}
+        Coventry<br>
+
+        {% else %}
+
+        {{ data['employer-address-line-town'] }}<br>
+
+        {% endif %}
+
+        <!--line town ENDS-->
+             <!--line post code-->
+
+        {% if data['use-this-employer-address'] === 'yes' %}
+        Coventry<br>
+
+        {% else %}
+
+        {{ data['employer-address-line-post-code'] }}<br>
+
+        {% endif %}
+
+        <!--line town ENDS-->
+
+
           </p>
         </div>
       </div>
     </div>
+
+
+
 
 <!-- EDIT LINK -->
 <div class="govuk-grid-row">

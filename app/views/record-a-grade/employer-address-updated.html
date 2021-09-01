@@ -46,10 +46,10 @@
 
 
         <div class="govuk-inset-text">
-          <p class="govuk-body">25 Townsville House<br>
-            Townsend Avenue<br>
-            Coventry<br>
-            CV1 1AB
+          <p class="govuk-body">{{ data['employer-address-line-one'] }}<br>
+            {{ data['employer-address-line-two'] }}<br>
+            {{ data['employer-address-line-town'] }}<br>
+            {{ data['employer-address-line-post-code'] }}
           </p>
 
         </div>
@@ -61,7 +61,7 @@
 
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="use-this-employer-address" name="use-this-employer-address" type="checkbox" value="yes">
+                <input class="govuk-checkboxes__input" id="use-this-address" name="use-this-address" type="checkbox" value="yes">
                 <label class="govuk-label govuk-checkboxes__label  govuk-!-margin-bottom-6" for="waste">
                   Yes, use this address
                 </label>
