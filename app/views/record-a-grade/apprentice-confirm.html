@@ -31,11 +31,68 @@
         <h1 class="govuk-heading-xl">Confirm where we are sending the certificate</h1>
 
         <div class="govuk-inset-text">
-          <p class="govuk-body"><strong>Joanna Smith</strong><br>
-                                14 Thorne House<br>
-                                Townsend Avenue<br>
-                                Coventry<br>
-                                {{ data['address-postcode'] }}
+          <p class="govuk-body"><strong>
+            
+             <!--line one-->
+
+             {% if data['apprentice-name'] === 'Joanne Smith' %}
+             Joanne Smith<br>
+ 
+             {% else %}
+ 
+             {{ data['apprentice-name'] }}<br>
+ 
+             {% endif %}
+ 
+             <!--line one ENDS-->
+            
+          
+          
+          </strong><br>
+
+
+
+            <!--line one-->
+
+            {% if data['where-do-you-live'] === '14 Thorne House' %}
+            14 Thorne House<br>
+
+            {% else %}
+
+            {{ data['apprentice-address-line-one'] }}<br>
+
+            {% endif %}
+
+            <!--line one ENDS-->
+
+            <!--line two-->
+
+            {% if data['where-do-you-live'] === '14 Thorne House' %}
+            Townsend Avenue<br>
+
+            {% else %}
+
+            {{ data['apprentice-address-line-two'] }}<br>
+
+            {% endif %}
+
+            <!--line two ENDS-->
+
+             <!--line town-->
+
+             {% if data['where-do-you-live'] === '14 Thorne House' %}
+             Coventry<br>
+ 
+             {% else %}
+ 
+             {{ data['apprentice-address-line-town'] }}<br>
+ 
+             {% endif %}
+ 
+             <!--line town ENDS-->
+
+            
+            {{ data['apprentice-address-line-post-code'] }}
           </p>
         </div>
       </div>

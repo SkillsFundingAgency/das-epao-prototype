@@ -24,7 +24,7 @@
 
   <main class="govuk-main-wrapper">
 
-    <form method="post" action="apprentice-search-address">
+    <form method="post" action="apprentice-check-and-submit">
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -32,18 +32,15 @@
 
        
 
-        {{ govukInput({
-          label: {
-            text: "Recipient's name",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          },
-          id: "apprentice-name",
-          name: "apprentice-name",
-          value: "Joanna Smith"
-        }) }}
+       
       
-
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="apprentice-name">
+            Recipient's name
+            </label>
+          </h1>
+          <input class="govuk-input" id="apprentice-name" name="apprentice-name" type="text" value="{{ data['apprentice-name'] }}">
+        </div>
 <!-- CTA -->
 {{ govukButton({
   text: "Continue"

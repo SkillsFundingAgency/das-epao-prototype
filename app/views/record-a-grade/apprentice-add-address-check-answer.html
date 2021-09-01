@@ -24,7 +24,7 @@
 
   <main class="govuk-main-wrapper">
 
-    <form method="post" action="apprentice-confirm">
+    <form method="post" action="apprentice-check-and-submit">
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -32,35 +32,31 @@
 
        
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="two-thirds">
-            Recipient's name
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="apprentice-name" name="apprentice-name" type="text" value="{{ data['apprentice-name'] }}"></div>
+        
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="full">
             Building and street
           </label>
-          <input class="govuk-input govuk-!-width-full" id="apprentice-address-line-one" name="apprentice-address-line-one" type="text"></div>
+          <input class="govuk-input govuk-!-width-full" id="apprentice-address-line-one" name="apprentice-address-line-one" type="text" value=" {{ data['apprentice-address-line-one'] }}"></div>
 
         <div class="govuk-form-group">
-          <input class="govuk-input govuk-!-width-full" id="apprentice-address-line-two" name="apprentice-address-line-two" type="text"></div>
+          <input class="govuk-input govuk-!-width-full" id="apprentice-address-line-two" name="apprentice-address-line-two" type="text" value=" {{ data['apprentice-address-line-two'] }}"></div>
 
         <div class="govuk-form-group">
-          <input class="govuk-input govuk-!-width-full" id="apprentice-address-line-three" name="apprentice-address-line-three" type="text"></div>
+          <input class="govuk-input govuk-!-width-full" id="apprentice-address-line-three" name="apprentice-address-line-three" type="text" value=" {{ data['apprentice-address-line-three'] }}"></div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="two-thirds">
             Town or city
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="apprentice-address-line-town" name="apprentice-address-line-town" type="text"></div>
+          <input class="govuk-input govuk-!-width-two-thirds" id=apprentice-address-line-town" name="apprentice-address-line-town" type="text" value=" {{ data['apprentice-address-line-town'] }}"></div>
         
         <div class="govuk-form-group">
           <label class="govuk-label" for="one-third">
             Postcode
           </label>
-          <input class="govuk-input govuk-!-width-one-third" id="apprentice-address-line-post-code" name="apprentice-address-line-post-code" type="text"></div>
+          <input class="govuk-input govuk-!-width-one-third" id="apprentice-address-line-post-code" name="apprentice-address-line-post-code" type="text" value=" {{ data['apprentice-address-line-post-code'] }}"></div>
     
         
                 
