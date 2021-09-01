@@ -36,54 +36,58 @@
             {{ data['dept-name'] }}<br>
             <!--line one-->
 
-       {% if data['use-this-employer-address'] === 'yes' %}
-       25 Townsville House<br>
+            {% if data['use-this-employer-address'] === 'yes' %}
+            25 Townsville House<br>
 
-       {% else %}
+            {% elif data['use-this-employer-address-updated'] === 'yes' %}
+            {{ data['employer-address-line-one'] }}
 
-       {{ data['employer-address-line-one'] }}<br>
+            {% else %}
 
-       {% endif %}
+            {{ data['employer-address-line-one'] }}<br>
 
-       <!--line one ENDS-->
+            {% endif %}
 
-       <!--line two-->
+            <!--line one ENDS-->
 
-       {% if data['use-this-employer-address'] === 'yes' %}
-       Townsend Avenue<br>
+            <!--line two-->
 
-       {% else %}
+            {% if data['use-this-employer-address'] === 'yes' %}
+            Townsend Avenue<br>
+            
 
-       {{ data['employer-address-line-two'] }}<br>
+            {% else %}
 
-       {% endif %}
+            {{ data['employer-address-line-two'] }}<br>
 
-       <!--line two ENDS-->
+            {% endif %}
 
-        <!--line town-->
+            <!--line two ENDS-->
 
-        {% if data['use-this-employer-address'] === 'yes' %}
-        Coventry<br>
+              <!--line town-->
 
-        {% else %}
+              {% if data['use-this-employer-address'] === 'yes' %}
+              Coventry<br>
 
-        {{ data['employer-address-line-town'] }}<br>
+              {% else %}
 
-        {% endif %}
+              {{ data['employer-address-line-town'] }}<br>
 
-        <!--line town ENDS-->
-             <!--line post code-->
+              {% endif %}
 
-        {% if data['use-this-employer-address'] === 'yes' %}
-        Coventry<br>
+              <!--line town ENDS-->
+                  <!--line post code-->
 
-        {% else %}
+              {% if data['use-this-employer-address'] === 'yes' %}
+              Coventry<br>
 
-        {{ data['employer-address-line-post-code'] }}<br>
+              {% else %}
 
-        {% endif %}
+              {{ data['employer-address-line-post-code'] }}<br>
 
-        <!--line town ENDS-->
+              {% endif %}
+
+              <!--line town ENDS-->
 
 
           </p>
