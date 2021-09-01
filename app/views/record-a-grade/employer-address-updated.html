@@ -24,7 +24,7 @@
 
   <main class="govuk-main-wrapper">
 
-    <form method="post" action="employer-details">
+    <form method="post" action="employer-details" novalidate data-validate='error-state-validation'>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -56,25 +56,30 @@
       
 
 <!-- CHECKBOX -->
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
 
-            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="use-this-address" name="use-this-address" type="checkbox" value="yes">
-                <label class="govuk-label govuk-checkboxes__label  govuk-!-margin-bottom-6" for="waste">
-                  Yes, use this address
-                </label>
-              </div>
-            </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="use-this-employer-address" name="use-this-employer-address" type="checkbox" value="yes">
+        <label class="govuk-label govuk-checkboxes__label  govuk-!-margin-bottom-3" for="waste">
+          Yes, use this address
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
 <!-- END CHECKBOX -->
 
 <!-- EDIT LINK -->
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+  <div class="govuk-grid-column-two-thirds">
 <p class="govuk-body"><a href="employer-edit-address" class="govuk-link govuk-!-margin-bottom-6">Edit this address</a></p>
+</div>
+</div>
 <!-- END EDIT LINK -->
 
-          </fieldset>
-        </div>
+          
 
 <!-- CTA -->
 {{ govukButton({
@@ -87,6 +92,16 @@
   </main>
 </div>
 
+
+<script type="application/json" id="error-state-validation">
+  { 		  	
+    "use-this-employer-address": {
+      "presence": {
+        "message": "^You must confirm or edit the employer's name"
+      }
+    }
+  }
+  </script>
 
 {% endblock %}
 {% endblock %}
