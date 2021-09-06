@@ -6,7 +6,7 @@ const router = express.Router()
 // record-a-grade: who to send certificate to
 router.post('/record-a-grade/send-the-certificate', (req, res) => {
 	if(req.session.data['send-the-certificate'] == 'apprentice'){
-		res.redirect('apprentice-name');
+		res.redirect('apprentice-search-address');
 	} else if(req.session.data['send-the-certificate'] == 'employer'){
         res.redirect('employer-address');
 	} else if(req.session.data['send-the-certificate'] == 'provider'){
