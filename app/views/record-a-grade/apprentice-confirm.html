@@ -51,9 +51,9 @@
 
             {% if data['where-do-you-live'] === '14 Thorne House' %}
             14 Thorne House<br>
-
+    <!--in the line above, we're checking if the address has been changed at all and if it hasn't then display the default address of 14 thorne House-->
             {% else %}
-
+    <!-- if the value for 'where-do-you-live' does not equal 14 thorne house (so has been changed at all) then display the new address for 'apprentice-address-line-one'-->
             {{ data['apprentice-address-line-one'] }}<br>
 
             {% endif %}
@@ -64,9 +64,9 @@
 
             {% if data['where-do-you-live'] === '14 Thorne House' %}
             Townsend Avenue<br>
-
+    <!-- We're still testing against the value of 'where-do-you-live' (a bit lazy of me really)-->
             {% else %}
-
+    <!-- if the value has been changed from 14 thorne house then we're displaying the new second line of the adress-->
             {{ data['apprentice-address-line-two'] }}<br>
 
             {% endif %}
