@@ -24,7 +24,7 @@
 
   <main class="govuk-main-wrapper">
 
-    <form method="post" action="employer-search-address">
+    <form method="post">
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -34,7 +34,7 @@
 
 {{ govukRadios({
   idPrefix: "sign-in",
-  name: "sign-in",
+  name: "choose-employer-address",
   fieldset: {
     legend: {
       isPageHeading: false,
@@ -55,7 +55,7 @@
       }
     },
     {
-      value: "adress-last-used",
+      value: "address-last-used",
       text: "Use the address from your last ceritficate request with this employer",
       hint: {
         html: "<div class='govuk-inset-text'>

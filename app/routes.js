@@ -25,5 +25,17 @@ router.post('/record-a-grade/apprentice-find-address', function (req, res) {
     } else res.redirect('apprentice-select-address');
 });
 
+// record-a-grade: select employer address
+router.post('/record-a-grade/employer-address-saved', function (req, res) {
+	if(req.session.data['choose-employer-address'] == 'address-system'){
+		res.redirect('employer-details');
+	} else if(req.session.data['choose-employer-address'] == 'address-last-used'){
+        res.redirect('employer-details');
+	} else if(req.session.data['choose-employer-address'] == 'search-address'){
+        res.redirect('employer-search-address');
+    } 
+});
+
+
 
 module.exports = router
