@@ -152,7 +152,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
                 <span id="Name" class="govuk-error-message field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
-                Employer
+                Apprentice
             </dd>
             <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="certificate-receiver">
@@ -160,48 +160,20 @@
                 </a>
             </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-              Recepient's name
-          </dt>
-          <dd class="govuk-summary-list__value">
-              <span id="Name" class="govuk-error-message field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
-              {{ data['recipient-name'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="employer-details">
-                  Change<span class="govuk-visually-hidden"> recipient name</span>
-              </a>
-          </dd>
-      </div>
+
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-                Department
+                Recipient's name
             </dt>
             <dd class="govuk-summary-list__value">
-                    <span>{{ data['dept-name'] }}</span>
+                <span id="Name" class="govuk-error-message field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                Joanna Smith
             </dd>
             <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="employer-details">
-                    Change<span class="govuk-visually-hidden"> department</span>
-                </a>
             </dd>
         </div>
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                Employer
-            </dt>
-            <dd class="govuk-summary-list__value">
-                    <span>ONA Consulting Limited</span>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                        Change<span class="govuk-visually-hidden"> employer</span>
-                    </a>
-                 
-                    
-            </dd>
-        </div>
+
+       
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
                 Address
@@ -210,60 +182,49 @@
                 <span id="AddressLine1" class="govuk-error-message field-validation-valid" data-valmsg-for="AddressLine1" data-valmsg-replace="true"></span>
                 <span id="City" class="govuk-error-message field-validation-valid" data-valmsg-for="City" data-valmsg-replace="true"></span>
                 <span id="Postcode" class="govuk-error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
-                 <!--line one-->
+                  <!--line one-->
 
-            {% if data['use-this-employer-address'] === 'yes' %}
-            25 Townsville House<br>
+                    {% if data['where-do-you-live'] === '14 Thorne House' %}
+                    14 Thorne House<br>
 
-            {% else %}
+                    {% else %}
 
-            {{ data['employer-address-line-one'] }}<br>
+                    {{ data['apprentice-address-line-one'] }}<br>
 
-            {% endif %}
+                    {% endif %}
 
-            <!--line one ENDS-->
+                    <!--line one ENDS-->
 
-            <!--line two-->
+                    <!--line two-->
 
-            {% if data['use-this-employer-address'] === 'yes' %}
-            Townsend Avenue<br>
+                    {% if data['where-do-you-live'] === '14 Thorne House' %}
+                    Townsend Avenue<br>
 
-            {% else %}
+                    {% else %}
 
-            {{ data['employer-address-line-two'] }}<br>
+                    {{ data['apprentice-address-line-two'] }}<br>
 
-            {% endif %}
+                    {% endif %}
 
-            <!--line two ENDS-->
+                    <!--line two ENDS-->
 
-              <!--line town-->
+                    <!--line town-->
 
-              {% if data['use-this-employer-address'] === 'yes' %}
-              Coventry<br>
+                    {% if data['where-do-you-live'] === '14 Thorne House' %}
+                    Coventry<br>
+        
+                    {% else %}
+        
+                    {{ data['apprentice-address-line-town'] }}<br>
+        
+                    {% endif %}
+        
+                    <!--line town ENDS-->
 
-              {% else %}
-
-              {{ data['employer-address-line-town'] }}<br>
-
-              {% endif %}
-
-              <!--line town ENDS-->
-                  <!--line post code-->
-
-              {% if data['use-this-employer-address'] === 'yes' %}
-              Coventry<br>
-
-              {% else %}
-
-              {{ data['employer-address-line-post-code'] }}<br>
-
-              {% endif %}
-
-              <!--line town ENDS-->
-
+                  <span class="uppercase">   {{ data['apprentice-address-line-post-code'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="employer-edit-address">
+                    <a class="govuk-link" href="apprentice-add-address-check-answer">
                         Change<span class="govuk-visually-hidden"> address</span>
                     </a>
             </dd>

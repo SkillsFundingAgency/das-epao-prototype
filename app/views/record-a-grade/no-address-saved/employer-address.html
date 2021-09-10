@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO record a grade
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <form method="post" action="employer-details"  novalidate data-validate='error-state-validation'>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Confirm the employer's address where we are sending the certificate</h1>
+
+        <h2 class="govuk-heading-l">ONA Consulting Limited</h2>
+
+
+
+
+        <div class="govuk-inset-text">
+          <p class="govuk-body">25 Townsville House<br>
+            Townsend Avenue<br>
+            Coventry<br>
+            CV1 1AB
+          </p>
+
+        </div>
+      
+
+<!-- CHECKBOX -->
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="use-this-employer-address" name="use-this-employer-address" type="checkbox" value="yes">
+                <label class="govuk-label govuk-checkboxes__label  govuk-!-margin-bottom-3" for="waste">
+                  Yes, use this address
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+<!-- END CHECKBOX -->
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+  <div class="govuk-grid-column-two-thirds">
+
+<!-- EDIT LINK -->
+<p class="govuk-body"><a href="employer-edit-address" class="govuk-link ">Use a different address</a></p>
+<!-- END EDIT LINK -->
+</div>
+</div>          
+
+<!-- CTA -->
+{{ govukButton({
+  text: "Continue"
+}) }}
+<!-- END CTA -->
+
+</form>
+
+  </main>
+</div>
+
+
+<script type="application/json" id="error-state-validation">
+  { 		  	
+    "use-this-employer-address": {
+      "presence": {
+        "message": "^You must confirm or edit the employer's name"
+      }
+    }
+  }
+  </script>
+
+{% endblock %}
+{% endblock %}

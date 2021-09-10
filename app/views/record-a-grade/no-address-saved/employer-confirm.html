@@ -37,34 +37,58 @@
             ONA Consulting Limited<br>
             <!--line one-->
 
-            {% if data['choose-employer-address'] === 'address-system' %}
+            {% if data['use-this-employer-address'] === 'yes' %}
             25 Townsville House<br>
-            Townsend Avenue<br>
-            Coventry<br>
-            CV1 1AB
 
-            {% elif data['choose-employer-address'] === 'address-last-used' %}
-            14 Thorne House<br> 
-            Townsend Avenue<br>
-            Coventry<br>
-            CV1 1AB
-
-            {% elif data['choose-employer-address'] === '14 Thorne House' %}
-            14 Thorne House<br> 
-            Townsend Avenue<br>
-            Coventry<br>
-            {{ data['employer-address-line-post-code'] }}
+            {% elif data['use-this-employer-address-updated'] === 'yes' %}
+            {{ data['employer-address-line-one'] }}
 
             {% else %}
 
             {{ data['employer-address-line-one'] }}<br>
-            {{ data['employer-address-line-two'] }}<br>
-            {{ data['employer-address-line-town'] }}<br>
-            {{ data['employer-address-line-post-code'] }}
 
             {% endif %}
 
             <!--line one ENDS-->
+
+            <!--line two-->
+
+            {% if data['use-this-employer-address'] === 'yes' %}
+            Townsend Avenue<br>
+            
+
+            {% else %}
+
+            {{ data['employer-address-line-two'] }}<br>
+
+            {% endif %}
+
+            <!--line two ENDS-->
+
+              <!--line town-->
+
+              {% if data['use-this-employer-address'] === 'yes' %}
+              Coventry<br>
+
+              {% else %}
+
+              {{ data['employer-address-line-town'] }}<br>
+
+              {% endif %}
+
+              <!--line town ENDS-->
+                  <!--line post code-->
+
+              {% if data['use-this-employer-address'] === 'yes' %}
+              CV1 1AB<br>
+
+              {% else %}
+
+             <span class="uppercase"> {{ data['employer-address-line-post-code'] }}<br> </span>
+
+              {% endif %}
+
+              <!--line town ENDS-->
 
 
           </p>
