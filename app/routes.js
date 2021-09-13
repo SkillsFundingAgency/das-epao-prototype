@@ -4,7 +4,7 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 // record-a-grade: who to send certificate to
-router.post('/record-a-grade/send-the-certificate', (req, res) => {
+router.post('/record-a-grade/v1/no-address-saved/send-the-certificate', (req, res) => {
 	if(req.session.data['send-the-certificate'] == 'apprentice'){
 		res.redirect('apprentice-search-address');
 	} else if(req.session.data['send-the-certificate'] == 'employer'){
@@ -27,7 +27,7 @@ router.post('/record-a-grade/v1/no-address-saved/send-the-certificate', (req, re
 
 
 // record-a-grade: apprentice search address
-router.post('/record-a-grade/apprentice-find-address', function (req, res) {
+router.post('/record-a-grade/v1/no-address-saved/apprentice-find-address', function (req, res) {
 	if(req.session.data['street-number-house-name'] == '14'){
 		res.redirect('apprentice-select-address-1');
 	} else if(req.session.data['street-number-house-name'] == 'test'){
@@ -38,7 +38,7 @@ router.post('/record-a-grade/apprentice-find-address', function (req, res) {
 });
 
 // record-a-grade: employer search address
-router.post('/record-a-grade/employer-find-address', function (req, res) {
+router.post('/record-a-grade/v1/no-address-saved/employer-find-address', function (req, res) {
 	if(req.session.data['company-building-name'] == '14'){
 		res.redirect('employer-select-address-1');
 	} else if(req.session.data['company-building-name'] == 'test'){
