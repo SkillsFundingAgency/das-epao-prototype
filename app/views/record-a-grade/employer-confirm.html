@@ -43,6 +43,12 @@
             Coventry<br>
             CV1 1AB
 
+            {% elif data['use-this-employer-address'] === 'yes' %}
+            14 Thorne House<br> 
+            Townsend Avenue<br>
+            Coventry<br>
+            {{ data['employer-address-line-post-code'] }}
+
             {% elif data['choose-employer-address'] === 'address-last-used' %}
             14 Thorne House<br> 
             Townsend Avenue<br>
