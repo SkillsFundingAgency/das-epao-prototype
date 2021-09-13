@@ -38,7 +38,7 @@ router.post('/record-a-grade/apprentice-find-address', function (req, res) {
 });
 
 // record-a-grade: employer search address
-router.post('/record-a-grade/v1/address-saved/employer-find-address', function (req, res) {
+router.post('/record-a-grade/employer-find-address', function (req, res) {
 	if(req.session.data['company-building-name'] == '14'){
 		res.redirect('employer-select-address-1');
 	} else if(req.session.data['company-building-name'] == 'test'){
