@@ -41,6 +41,16 @@ router.post('/record-a-grade/v1/no-address-saved/apprentice-find-address', funct
 router.post('/record-a-grade/v1/no-address-saved/employer-find-address', function (req, res) {
 	if(req.session.data['company-building-name'] == '14'){
 		res.redirect('employer-select-address-1');
+	} else if(req.session.data['company-building-name'] == 'ONA'){
+        res.redirect('employer-select-address-1');
+	} else if(req.session.data['company-building-name'] == 'ona'){
+        res.redirect('employer-select-address-1');
+	} else if(req.session.data['company-building-name'] == 'ONA Consulting'){
+        res.redirect('employer-select-address-1');
+	} else if(req.session.data['company-building-name'] == 'ONA consulting'){
+        res.redirect('employer-select-address-1');
+	} else if(req.session.data['company-building-name'] == 'ona consulting'){
+        res.redirect('employer-select-address-1');	
 	} else if(req.session.data['company-building-name'] == 'test'){
         res.redirect('employer-select-address-0');
 	} else if(req.session.data['company-building-name'] == 'Test'){
@@ -70,6 +80,16 @@ router.post('/record-a-grade/v1/address-saved/employer-address-saved', function 
 router.post('/record-a-grade/v1/address-saved/employer-find-address', function (req, res) {
 	if(req.session.data['company-building-name'] == '14'){
 		res.redirect('employer-select-address-1');
+	} else if(req.session.data['company-building-name'] == 'ONA'){
+        res.redirect('employer-select-address-1');
+	} else if(req.session.data['company-building-name'] == 'ona'){
+        res.redirect('employer-select-address-1');
+	} else if(req.session.data['company-building-name'] == 'ONA Consulting'){
+        res.redirect('employer-select-address-1');
+	} else if(req.session.data['company-building-name'] == 'ONA consulting'){
+        res.redirect('employer-select-address-1');
+	} else if(req.session.data['company-building-name'] == 'ona consulting'){
+        res.redirect('employer-select-address-1');
 	} else if(req.session.data['company-building-name'] == 'test'){
         res.redirect('employer-select-address-0');
 	} else if(req.session.data['company-building-name'] == 'Test'){
