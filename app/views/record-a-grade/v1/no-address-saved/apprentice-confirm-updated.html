@@ -24,38 +24,47 @@
 
   <main class="govuk-main-wrapper">
 
-    <form method="post" action="employer-check-and-submit-updated">
+    <form method="post" action="apprentice-check-and-submit-updated">
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Confirm the employer's address where we are sending the certificate</h1>
+        <h1 class="govuk-heading-xl">Confirm where we are sending the certificate</h1>
 
         <div class="govuk-inset-text">
-        <p class="govuk-body">
-          <b> {{ data['recipient-name'] }}</b><br>
-           {{ data['dept-name'] }}<br>
-           ONA Consulting Limited<br>
+          <p class="govuk-body"><strong>
+            
+             <!--line one-->
+
+             Joanne Smith<br>
+ 
+             
+ 
+             <!--line one ENDS-->
+            
+          
+          
+          </strong>
+
+          {{ data['apprentice-address-line-one'] }}<br>
+            {{ data['apprentice-address-line-two'] }}<br>
+            {{ data['apprentice-address-line-town'] }}<br>
 
 
 
-            {{ data['employer-address-line-one'] }}<br>
-            {{ data['employer-address-line-two'] }}<br>
-            {{ data['employer-address-line-town'] }}<br>
-            {{ data['employer-address-line-post-code'] }}
+            
+           <span class="uppercase"> {{ data['apprentice-address-line-post-code'] }}</span>
           </p>
-
         </div>
-      
+      </div>
+    </div>
 
 <!-- EDIT LINK -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<p class="govuk-body"><a href="employer-details" class="govuk-link govuk-!-margin-bottom-6">Edit the recipient's name</a></p>
-<p class="govuk-body"><a href="employer-edit-address" class="govuk-link">Edit the employer's address</a></p>
+<p class="govuk-body"><a href="apprentice-edit-address" class="govuk-link">Edit this address</a></p>
   </div>
 </div>
 <!-- END EDIT LINK -->
-          
 
 <!-- CTA -->
 {{ govukButton({
@@ -64,6 +73,7 @@
 <!-- END CTA -->
 
 </form>
+
 
   </main>
 </div>
