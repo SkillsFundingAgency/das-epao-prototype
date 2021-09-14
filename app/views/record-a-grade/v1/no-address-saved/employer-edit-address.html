@@ -34,6 +34,8 @@
           You can temporarily choose to send certificates to the apprentice, employer or training provider.
         </p> -->
 
+        {% if data['use-this-employer-address'] === 'yes' %}
+
         <div class="govuk-form-group">
           <label class="govuk-label" for="two-thirds">
             Employer name
@@ -65,7 +67,40 @@
           <input class="govuk-input govuk-!-width-one-third" id="employer-address-line-post-code" name="employer-address-line-post-code" type="text" value="CV1 1AB"></div>
     
         
-                
+          {% else %}
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="two-thirds">
+              Employer name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="employer-name" type="text" value="ONA Consulting Limited"></div>
+  
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="full">
+              Building and street
+            </label>
+            <input class="govuk-input govuk-!-width-full" id="employer-address-line-one" name="employer-address-line-one" type="text" value="14 Thorne House"></div>
+  
+          <div class="govuk-form-group">
+            <input class="govuk-input govuk-!-width-full" id="employer-address-line-two" name="employer-address-line-two" type="text" value="Townsend Avenue"></div>
+  
+          <div class="govuk-form-group">
+            <input class="govuk-input govuk-!-width-full" id="employer-address-line-three" name="employer-address-line-three" type="text"></div>
+  
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="two-thirds">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="employer-address-line-town" name="employer-address-line-town" type="text" value="Coventry"></div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="one-third">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-!-width-one-third" id="employer-address-line-post-code" name="employer-address-line-post-code" type="text" value="CV1 1AB"></div>
+
+
+          {% endif %}
 
 
 <!-- CTA -->
