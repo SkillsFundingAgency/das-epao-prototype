@@ -24,7 +24,7 @@
 
   <main class="govuk-main-wrapper">
 
-    <form method="post" action="apprentice-add-address">
+    <form method="post" action="employer-add-address">
 
       <div class="govuk-grid-row govuk-!-padding-bottom-3 top-zero">
         <div class="govuk-grid-column-two-thirds top-zero">
@@ -37,12 +37,12 @@
                         <p class="govuk-body">We have not been able to find the address. Check the details you have provided, or enter address manually.</p>
                         <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Postcode</h2>
                         <p class="govuk-body-m">
-                          <b><span style="text-transform:uppercase">{{ data['apprentice-address-line-post-code'] }}</span></b>  
+                          <b><span style="text-transform:uppercase">{{ data['employer-address-line-post-code'] }}</span></b>  
                           <a href="apprentice-search-address" class="govuk-link govuk-!-margin-left-3">Change</a>
                         </p> 
 
                         <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Company or building name</h2>
-                        <p class="govuk-body"><b class="upper">{{ data['street-number-house-name'] }}</b>  <a href="apprentice-search-address" class="govuk-link govuk-!-margin-left-3">Change</a></p> 
+                        <p class="govuk-body"><b class="upper">{{ data['company-building-name'] }}</b>  <a href="apprentice-search-address" class="govuk-link govuk-!-margin-left-3">Change</a></p> 
                        
                       </div>
                      
