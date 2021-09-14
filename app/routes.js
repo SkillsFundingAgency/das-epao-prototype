@@ -48,6 +48,13 @@ router.post('/record-a-grade/v1/no-address-saved/employer-find-address', functio
     } else res.redirect('employer-select-address');
 });
 
+// record-a-grade: who to send certificate to (saved address)
+router.post('/record-a-grade/v1/address-saved/send-the-certificate', (req, res) => {
+	if(req.session.data['send-the-certificate'] == 'employer'){
+        res.redirect('employer-address-saved');
+    }
+});
+
 // record-a-grade: select employer address (saved address)
 router.post('/record-a-grade/v1/address-saved/employer-address-saved', function (req, res) {
 	if(req.session.data['choose-employer-address'] == 'address-system'){
