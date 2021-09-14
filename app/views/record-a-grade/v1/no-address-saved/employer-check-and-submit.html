@@ -212,56 +212,27 @@
                 <span id="Postcode" class="govuk-error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
                  <!--line one-->
 
-            {% if data['use-this-employer-address'] === 'yes' %}
-            25 Townsville House<br>
-
-            {% else %}
-
-            {{ data['employer-address-line-one'] }}<br>
-
-            {% endif %}
-
-            <!--line one ENDS-->
-
-            <!--line two-->
-
-            {% if data['use-this-employer-address'] === 'yes' %}
-            Townsend Avenue<br>
-
-            {% else %}
-
-            {{ data['employer-address-line-two'] }}<br>
-
-            {% endif %}
-
-            <!--line two ENDS-->
-
-              <!--line town-->
-
-              {% if data['use-this-employer-address'] === 'yes' %}
-              Coventry<br>
-
-              {% else %}
-
-              {{ data['employer-address-line-town'] }}<br>
-
-              {% endif %}
-
-              <!--line town ENDS-->
-                  <!--line post code-->
-
-              {% if data['use-this-employer-address'] === 'yes' %}
-              Coventry<br>
-
-              {% else %}
-
-              {{ data['employer-address-line-post-code'] }}<br>
-
-              {% endif %}
-
-              <!--line town ENDS-->
-
-
+                 {% if data['use-this-employer-address'] === 'yes' %}
+                 25 Townsville House<br>
+                 Townsend Avenue<br>
+                 Coventry<br>
+                 CV1 1AB
+     
+                 {% elif data['where-do-you-live'] === '14 Thorne House' %}
+                 14 Thorne House<br> 
+                 Townsend Avenue<br>
+                 Coventry<br>
+                 {{ data['employer-address-line-post-code'] }}
+     
+                 {% else %}
+     
+                 {{ data['employer-address-line-one'] }}<br>
+                 {{ data['employer-address-line-two'] }}<br>
+                 {{ data['employer-address-line-town'] }}<br>
+                 {{ data['employer-address-line-post-code'] }}
+     
+                 {% endif %}
+     
             </dd>
             <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="#">
