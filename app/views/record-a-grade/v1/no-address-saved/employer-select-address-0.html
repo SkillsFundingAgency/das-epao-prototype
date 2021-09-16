@@ -38,11 +38,11 @@
                         <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Postcode</h2>
                         <p class="govuk-body-m">
                           <b><span style="text-transform:uppercase">{{ data['employer-address-line-post-code'] }}</span></b>  
-                          <a href="apprentice-search-address" class="govuk-link govuk-!-margin-left-3">Change</a>
+                          <a href="employer-search-address" class="govuk-link govuk-!-margin-left-3">Change</a>
                         </p> 
 
                         <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Company or building name or number</h2>
-                        <p class="govuk-body"><b class="upper">{{ data['company-building-name'] }}</b>  <a href="apprentice-search-address" class="govuk-link govuk-!-margin-left-3">Change</a></p> 
+                        <p class="govuk-body"><b class="upper">{{ data['company-building-name'] }}</b>  <a href="employer-search-address" class="govuk-link govuk-!-margin-left-3">Change</a></p> 
                        
                       </div>
                      
@@ -50,7 +50,7 @@
                           {{ govukButton({
                               text: "Enter address manually",
                              
-                              href: "apprentice-add-address"
+                              href: "employer-add-address"
                           }) }}
                       </p>
                   </form>
