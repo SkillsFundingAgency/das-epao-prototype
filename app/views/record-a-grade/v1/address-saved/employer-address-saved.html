@@ -42,9 +42,20 @@
     }
   },
   items: [
+  {
+    value: "address-last-used",
+    text: "Previous address used for this employer",
+    hint: {
+      html: "<div class='govuk-inset-text'>
+        14 Thorne House<br> 
+        Townsend Avenue<br>
+        Coventry<br>
+          CV1 1AB
+      </div>"      }
+  },
     {
       value: "address-system",
-      text: "Latest address used for this employer",
+      text: "Alternative address we hold for this employer",
       hint: {
         html: "<div class='govuk-inset-text'>
           25 Townsville House<br> 
@@ -54,17 +65,7 @@
         </div>"
       }
     },
-    {
-      value: "address-last-used",
-      text: "Previous address used for this employer",
-      hint: {
-        html: "<div class='govuk-inset-text'>
-          14 Thorne House<br> 
-          Townsend Avenue<br>
-          Coventry<br>
-            CV1 1AB
-        </div>"      }
-    },
+    
     {
       divider: "or"
     },
