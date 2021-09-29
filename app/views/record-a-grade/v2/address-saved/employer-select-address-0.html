@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO record a grade
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <form method="post" action="employer-add-address">
+
+      <div class="govuk-grid-row govuk-!-padding-bottom-3 top-zero">
+        <div class="govuk-grid-column-two-thirds top-zero">
+        </div>
+      </div>
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                      <div class="govuk-!-margin-bottom-5">
+                        <h1 class="govuk-heading-xl">No addresses found matching those details</h1>
+                        <p class="govuk-body">We have not been able to find the address. Check the details you have provided, or enter address manually.</p>
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Postcode</h2>
+                        <p class="govuk-body-m">
+                          <b><span style="text-transform:uppercase">{{ data['employer-address-line-post-code']}}</span></b>  
+                          <a href="employer-search-address" class="govuk-link govuk-!-margin-left-3">Change</a>
+                        </p> 
+
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Company or building name or number</h2>
+                        <p class="govuk-body"><b class="upper">{{ data["company-building-name"] }}</b>  <a href="employer-search-address" class="govuk-link govuk-!-margin-left-3">Change</a></p> 
+                       
+                      </div>
+                     
+                      <p class="govuk-!-padding-top-3">
+                          {{ govukButton({
+                              text: "Enter address manually",
+                             
+                              href: "employer-add-address"
+                          }) }}
+                      </p>
+                  </form>
+              </div>
+          </div>
+      
+</form>
+
+  </main>
+</div>
+
+
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO record a grade
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              Assessment recorded
+            </h1>
+            <div class="govuk-panel__body">
+              You have recorded a pass for<br><strong>Joanna Smith</strong><br><br>
+            </div>
+            <div class="govuk-panel__body">
+              The certificate number is<br><strong>00028520</strong>
+            </div>
+          </div>
+  
+          <h2 class="govuk-heading-m">What happens next</h2>
+
+          <p class="govuk-body">We'll send the apprentice's certificate to the address you entered. You can <a href="#">check the status of the certificate</a> in the 'Completed assessments' section of your account.</p>
+  
+          <h2 class="govuk-heading-m">What do you want to do next?</h2>
+    
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link" href="#">Record another grade</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#">Leave feedback</a>
+            </li>
+            <li>
+              <a class="govuk-body">or</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#">Return to account home</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+    </main>
+  </div>
+  
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}
+{% endblock %}
