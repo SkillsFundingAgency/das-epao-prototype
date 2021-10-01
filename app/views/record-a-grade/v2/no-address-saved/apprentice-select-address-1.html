@@ -43,23 +43,18 @@
           </p>
 
 
-      
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <div class="govuk-radios  govuk-!-margin-top-4">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="14 Thorne House" checked>
-                  <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                    14 Thorne House, Townsend Avenue, Coventry,  <span style="text-transform:uppercase">{{ data['apprentice-address-line-post-code'] }}</span>
-                  </label>
-                </div>
-              </div>
-          
-            </fieldset>
+          <div class="govuk-form-group govuk-!-margin-top-6">
+            <label class="govuk-label govuk-label--m" for="full-address">
+              Select an address
+            </label>
+            <select class="govuk-select" id="where-do-you-live" name="where-do-you-live">
+              <option value="" selected="">1 address found</option>
+              <option value="14 Thorne House" >14 Thorne House, Townsend Avenue, Coventry, <span style="text-transform:uppercase">{{ data['apprentice-address-line-post-code'] }}</option>
+            </select>
           </div>
-      </div>
     </div>
-    </div>
+
+
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
