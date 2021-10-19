@@ -24,38 +24,29 @@
 
   <main class="govuk-main-wrapper">
 
-    <form action="apprentice-find-address" method="post">
+    <form action="apprentice-confirm" method="post">
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Search for the address that you'd like us to send the certificate to</h1>
 
-        {{ govukInput({
-          label: {
-            text: "Postcode",
-            classes: "govuk-label--m"
-          },
-          classes: "govuk-input--width-10",
-          id: "apprentice-address-line-post-code",
-          name: "apprentice-address-line-post-code",
-          value: data["apprentice-address-line-post-code"]
-        }) }}
+        <p class="govuk-body">
+         Start typing the address or postcode 
+        <p>
 
+        <div class="govuk-!-margin-bottom-6">
+          <label class="govuk-label" for="provider-name">
+            <span class="govuk-visually-hidden">Provider name</span>
+          </label>
+          <div class="body-text">
+            {# <input class="govuk-input" id="autocomplete-default" name="provider-name" type="text"> #}
+            <div id="tt-default" class="autocomplete-wrapper"></div>
+          </div>
+        </div> 
 
-          {{ govukInput({
-              label: {
-                text: "House number or name (optional)",
-                classes: "govuk-label--m",
-                isPageHeading: false
-              },
-              classes: "govuk-input--width-20",
-              id: "street-number-house-name",
-              name: "street-number-house-name",
-              value: data["street-number-house-name"]
-            }) }}
             
     </div>
-    </div>
+  </div>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -67,7 +58,7 @@
 
 <!-- CTA -->
 {{ govukButton({
-  text: "Search"
+  text: "Continue"
 }) }}
 <!-- END CTA -->
 
@@ -78,6 +69,30 @@
   </main>
 </div>
 
+<!-- AUTOCOMPLETE SCRIPT DATA -->
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+
+<script type="text/javascript">
+  var providers = [
+    "13 Thorne House, Townsend Avenue, Coventry, CV1 1AB",
+    "14 Thorne House, Townsend Avenue, Coventry, CV1 1AB",
+    "15 Thorne House, Townsend Avenue, Coventry, CV1 1AB",
+    "16 Thorne House, Townsend Avenue, Coventry, CV1 1AB",
+    "17 Thorne House, Townsend Avenue, Coventry, CV1 1AB",
+  ]
+</script>
+
+<script type="text/javascript">
+  var element = document.querySelector('#tt-default')
+  var id = 'autocomplete-default'
+  accessibleAutocomplete({
+    element: element,
+    id: id,
+    source: providers,
+    name: "addressdata"
+  })
+</script>
 
 {% endblock %}
 {% endblock %}
