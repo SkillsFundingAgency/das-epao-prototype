@@ -31,7 +31,6 @@
         <h1 class="govuk-heading-xl">Confirm where we are sending the certificate</h1>
 
         <div class="govuk-inset-text">
-          <p class="govuk-body">
            <b> {{ data['recipient-name'] }}</b><br>
             {{ data['dept-name'] }}<br>
             {{ data['employer-name'] }}<br>
@@ -49,25 +48,23 @@
             Coventry<br>
             CV1 1AB
 
-            {% elif data['choose-employer-address'] === '14 Thorne House' %}
+            <!-- {% elif data['choose-employer-address'] === '14 Thorne House' %}
             14 Thorne House<br> 
             Townsend Avenue<br>
             Coventry<br>
-            {{ data['employer-address-line-post-code'] }}
+            {{ data['employer-address-line-post-code'] }} -->
             
 
             {% else %}
 
-            {{ data['employer-address-line-one'] }}<br>
-            {{ data['employer-address-line-two'] }}<br>
-            {{ data['employer-address-line-town'] }}<br>
-            {{ data['employer-address-line-post-code'] }}
+            {% for addressLine in data['addressdata'].split(',') %}
+              {{ addressLine | safe }}<br>
+            {% endfor %}
 
             {% endif %}
 
             <!--line one ENDS-->
 
-          </p>
         </div>
       </div>
     </div>

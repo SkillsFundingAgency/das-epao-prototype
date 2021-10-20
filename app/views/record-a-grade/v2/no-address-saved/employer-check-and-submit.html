@@ -210,7 +210,6 @@
                 <span id="AddressLine1" class="govuk-error-message field-validation-valid" data-valmsg-for="AddressLine1" data-valmsg-replace="true"></span>
                 <span id="City" class="govuk-error-message field-validation-valid" data-valmsg-for="City" data-valmsg-replace="true"></span>
                 <span id="Postcode" class="govuk-error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
-                 <!--line one-->
 
                  {% if data['use-this-employer-address'] === 'yes' %}
                  25 Townsville House<br>
@@ -218,18 +217,12 @@
                  Coventry<br>
                  CV1 1AB
      
-                 {% elif data['where-do-you-live'] === '14 Thorne House' %}
-                 14 Thorne House<br> 
-                 Townsend Avenue<br>
-                 Coventry<br>
-                 {{ data['employer-address-line-post-code'] }}
-     
                  {% else %}
-     
-                 {{ data['employer-address-line-one'] }}<br>
-                 {{ data['employer-address-line-two'] }}<br>
-                 {{ data['employer-address-line-town'] }}<br>
-                 {{ data['employer-address-line-post-code'] }}
+                
+                 
+                 {% for addressLine in data['addressdata'].split(',') %}
+                 {{ addressLine | safe }}<br>
+               {% endfor %}
      
                  {% endif %}
      

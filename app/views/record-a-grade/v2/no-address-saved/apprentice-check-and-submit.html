@@ -182,46 +182,13 @@
                 <span id="AddressLine1" class="govuk-error-message field-validation-valid" data-valmsg-for="AddressLine1" data-valmsg-replace="true"></span>
                 <span id="City" class="govuk-error-message field-validation-valid" data-valmsg-for="City" data-valmsg-replace="true"></span>
                 <span id="Postcode" class="govuk-error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
-                  <!--line one-->
+                 
 
-                    {% if data['where-do-you-live'] === '14 Thorne House' %}
-                    14 Thorne House<br>
+                {% for addressLine in data['addressdata'].split(',') %}
+                {{ addressLine | safe }}<br>
+              {% endfor %}
+              
 
-                    {% else %}
-
-                    {{ data['apprentice-address-line-one'] }}<br>
-
-                    {% endif %}
-
-                    <!--line one ENDS-->
-
-                    <!--line two-->
-
-                    {% if data['where-do-you-live'] === '14 Thorne House' %}
-                    Townsend Avenue<br>
-
-                    {% else %}
-
-                    {{ data['apprentice-address-line-two'] }}<br>
-
-                    {% endif %}
-
-                    <!--line two ENDS-->
-
-                    <!--line town-->
-
-                    {% if data['where-do-you-live'] === '14 Thorne House' %}
-                    Coventry<br>
-        
-                    {% else %}
-        
-                    {{ data['apprentice-address-line-town'] }}<br>
-        
-                    {% endif %}
-        
-                    <!--line town ENDS-->
-
-                  <span class="uppercase">   {{ data['apprentice-address-line-post-code'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="apprentice-search-address">

@@ -238,10 +238,9 @@
 
             {% else %}
 
-            {{ data['employer-address-line-one'] }}<br>
-            {{ data['employer-address-line-two'] }}<br>
-            {{ data['employer-address-line-town'] }}<br>
-            {{ data['employer-address-line-post-code'] }}
+            {% for addressLine in data['addressdata'].split(',') %}
+            {{ addressLine | safe }}<br>
+          {% endfor %}
 
             {% endif %}
 

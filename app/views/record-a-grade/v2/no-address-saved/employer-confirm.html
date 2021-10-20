@@ -30,12 +30,14 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Confirm where we are sending the certificate</h1>
 
+
         <div class="govuk-inset-text">
-          <p class="govuk-body">
+
            <b> {{ data['recipient-name'] }}</b><br>
             {{ data['dept-name'] }}<br>
             {{ data['employer-name'] }}<br>
-            <!--line one-->
+            
+
 
             {% if data['use-this-employer-address'] === 'yes' %}
             25 Townsville House<br>
@@ -43,27 +45,27 @@
             Coventry<br>
             CV1 1AB
 
-            {% elif data['where-do-you-live'] === '14 Thorne House' %}
-            14 Thorne House<br> 
-            Townsend Avenue<br>
-            Coventry<br>
-            {{ data['employer-address-line-post-code'] }}
-
-            {% else %}
+            <!-- {% elif data['employer-add-address'] === 'employer-add-address' %}
 
             {{ data['employer-address-line-one'] }}<br>
             {{ data['employer-address-line-two'] }}<br>
             {{ data['employer-address-line-town'] }}<br>
-            {{ data['employer-address-line-post-code'] }}
+            {{ data['employer-address-line-post-code'] }} -->
 
+            {% else %}
+
+            {% for addressLine in data['addressdata'].split(',') %}
+              {{ addressLine | safe }}<br>
+            {% endfor %}
+            
             {% endif %}
 
 
-          </p>
-        </div>
+        </div>          
       </div>
     </div>
-
+  
+  
 
 
 

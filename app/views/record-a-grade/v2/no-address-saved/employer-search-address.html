@@ -24,41 +24,33 @@
 
   <main class="govuk-main-wrapper">
 
-    <form action="employer-find-address" method="post">
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Search for the address that you'd like us to send the certificate to</h1>
-
-        {{ govukInput({
-          label: {
-            text: "Postcode",
-            classes: "govuk-label--m"
-          },
-          classes: "govuk-input--width-10",
-          id: "employer-address-line-post-code",
-          name: "employer-address-line-post-code",
-          value: data["employer-address-line-post-code"]
-        }) }}
+    <form action="employer-details" method="post">
 
 
-          {{ govukInput({
-              label: {
-                text: "Employer or building name or number (optional)",
-                classes: "govuk-label--m",
-                isPageHeading: false
-              },
-              classes: "govuk-input--width-20",
-              id: "company-building-name",
-              name: "company-building-name",
-              value: data["company-building-name"]
-            }) }}
-            
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Search for the address that you'd like us to send the certificate to</h1>
+  
+          <p class="govuk-body">
+           Start typing the address or postcode 
+          <p>
+  
+          <div class="govuk-!-margin-bottom-6">
+            <label class="govuk-label" for="provider-name">
+              <span class="govuk-visually-hidden">Provider name</span>
+            </label>
+            <div class="body-text">
+              {# <input class="govuk-input" id="autocomplete-default" name="provider-name" type="text"> #}
+              <div id="tt-default" class="autocomplete-wrapper"></div>
+            </div>
+          </div> 
+  
+              
+      </div>
     </div>
-    </div>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
 <!-- EDIT LINK -->
 <p class="govuk-body"><a href="employer-add-address" class="govuk-link govuk-!-margin-bottom-6">Enter address manually</a></p>
@@ -78,6 +70,30 @@
   </main>
 </div>
 
+<!-- AUTOCOMPLETE SCRIPT DATA -->
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+
+<script type="text/javascript">
+  var providers = [
+    "13 Thorne House, Townsend Avenue, Coventry, CV1 1AB",
+    "14 Thorne House, Townsend Avenue, Coventry, CV1 1AB",
+    "15 Thorne House, Townsend Avenue, Coventry, CV1 1AB",
+    "16 Thorne House, Townsend Avenue, Coventry, CV1 1AB",
+    "17 Thorne House, Townsend Avenue, Coventry, CV1 1AB",
+  ]
+</script>
+
+<script type="text/javascript">
+  var element = document.querySelector('#tt-default')
+  var id = 'autocomplete-default'
+  accessibleAutocomplete({
+    element: element,
+    id: id,
+    source: providers,
+    name: "addressdata"
+  })
+</script>
 
 {% endblock %}
 {% endblock %}
