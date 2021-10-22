@@ -26,30 +26,22 @@
 
     <form method="post" action="employer-check-and-submit">
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-xl">Confirm where we are sending the certificate</h1>
-  
-          <div class="govuk-inset-text">
-          <b> {{ data['recipient-name'] }}</b><br>
-          {{ data['dept-name'] }}<br>
-          ONA Consulting Limited<br>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Confirm where we are sending the certificate</h1>
+
+        <div class="govuk-inset-text">
+           <b> {{ data['recipient-name'] }}</b><br>
+            {{ data['dept-name'] }}<br>
+            <!--line one-->
+
+            {% if data['employer-address-details'] === 'yes' %}
+            ONA Consulting Limited<br>
+             25 Townsville House<br>
+             Townsend Avenue<br>
+             Coventry<br>
+             CV1 1AB
             
-        
-
-            {% if data['use-this-employer-address'] === 'yes' %}
-            25 Townsville House<br>
-            Townsend Avenue<br>
-            Coventry<br>
-            CV1 1AB
-
-          </div>
-            <!-- {% elif data['employer-add-address'] === 'employer-add-address' %}
-
-            {{ data['employer-address-line-one'] }}<br>
-            {{ data['employer-address-line-two'] }}<br>
-            {{ data['employer-address-line-town'] }}<br>
-            {{ data['employer-address-line-post-code'] }} -->
 
             {% else %}
 
@@ -57,21 +49,22 @@
               {{ addressLine | safe }}<br>
             {% endfor %}
 
-          
             {% endif %}
-          
+
+            <!--line one ENDS-->
+
         </div>
       </div>
-    
-  
+    </div>
 
 
-    
+
+
 <!-- EDIT LINK -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 <p class="govuk-body"><a href="employer-details" class="govuk-link govuk-!-margin-bottom-6">Edit the recipient's details</a></p>
-<p class="govuk-body"><a href="employer-edit-address" class="govuk-link">Edit the employer's address</a></p>
+<p class="govuk-body"><a href="employer-edit-address" class="govuk-link">Edit the employer's details</a></p>
   </div>
 </div>
 <!-- END EDIT LINK -->

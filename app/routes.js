@@ -205,7 +205,11 @@ router.post('/record-a-grade/v2/address-saved/employer-find-address', function (
     } else res.redirect('employer-select-address');
 });
 
-
-
-
+router.post('/record-a-grade/v2/no-address-saved/employer-use-details', (req, res) => {
+	if(req.session.data['employer-address-details'] == 'yes'){
+		res.redirect('employer-details');
+	} else if(req.session.data['employer-address-details'] == 'no'){
+        res.redirect('employer-search-address');
+    }
+});
 module.exports = router

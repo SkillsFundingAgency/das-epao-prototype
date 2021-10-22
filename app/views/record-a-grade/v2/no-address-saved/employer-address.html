@@ -24,18 +24,16 @@
 
   <main class="govuk-main-wrapper">
 
-    <form method="post" action="employer-details"  novalidate data-validate='error-state-validation'>
+    <form method="post" action="employer-use-details">
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">This is the address we have for ONA Consulting Limited </h1>
 
-        <p class="govuk-body">
-          This is the address we hold for where the apprenticeship took place.
-        <p>
-
         <div class="govuk-inset-text">
-          <p class="govuk-body">25 Townsville House<br>
+          <p class="govuk-body">
+            <b>ONA Consulting Limited</b><br>
+            25 Townsville House<br>
             Townsend Avenue<br>
             Coventry<br>
             CV1 1AB
@@ -45,28 +43,59 @@
       
 
 <!-- CHECKBOX -->
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
 
-            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="use-this-employer-address" name="use-this-employer-address" type="checkbox" value="yes">
-                <label class="govuk-label govuk-checkboxes__label  govuk-!-margin-bottom-3" for="waste">
-                  Yes, use this address
-                </label>
-              </div>
-            </div>
-          </fieldset>
+
+
+
+    <!-- <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Do you want to use these employer details?
+          </h2>
+        </legend>
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="employer-address" name="employer-address" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+              Yes, use these employer details
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="employer-address" name="employer-address" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+              No, use different employer details
+            </label>
+          </div>
         </div>
-<!-- END CHECKBOX -->
-<div class="govuk-grid-row govuk-!-margin-bottom-6">
-  <div class="govuk-grid-column-two-thirds">
+    
+      </fieldset>
+    </div>
+ -->
+    <!-- RADIO BUTTONS -->
+{{ govukRadios({
+  idPrefix: "employer-address-details",
+  name: "employer-address-details",
+  fieldset: {
+    legend: {
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes, use these employer details"
+    },
+    {
+      value: "no",
+      text: " No, use different employer details"
+    }
+  ]
+}) }}
+<!-- END RADIO BUTTONS -->
 
-<!-- EDIT LINK -->
-<p class="govuk-body"><a href="employer-search-address" class="govuk-link ">Use a different address</a></p>
-<!-- END EDIT LINK -->
-</div>
-</div>          
+
 
 <!-- CTA -->
 {{ govukButton({
@@ -79,16 +108,6 @@
   </main>
 </div>
 
-
-<script type="application/json" id="error-state-validation">
-  { 		  	
-    "use-this-employer-address": {
-      "presence": {
-        "message": "^You must confirm or search for the employer's address"
-      }
-    }
-  }
-  </script>
 
 {% endblock %}
 {% endblock %}
