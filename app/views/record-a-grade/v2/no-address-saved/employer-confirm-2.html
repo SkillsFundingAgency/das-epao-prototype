@@ -33,7 +33,6 @@
         <div class="govuk-inset-text">
            <b> {{ data['recipient-name-2'] }}</b><br>
             {{ data['dept-name-2'] }}<br>
-            {{ data['employer-name'] }}<br>
 
             {% for addressLine in data['addressdata'].split(',') %}
               {{ addressLine | safe }}<br>
