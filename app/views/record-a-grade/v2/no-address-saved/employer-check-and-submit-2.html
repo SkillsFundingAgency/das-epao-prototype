@@ -166,7 +166,6 @@
           </dt>
           <dd class="govuk-summary-list__value">
               <span id="Name" class="govuk-error-message field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
-              {{ data['recipient-name'] }}
               {{ data['recipient-name-2'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -180,7 +179,6 @@
                 Department
             </dt>
             <dd class="govuk-summary-list__value">
-                    <span>{{ data['dept-name'] }}</span>
                     <span>{{ data['dept-name-2'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -209,11 +207,17 @@
                 Address
             </dt>
             <dd class="govuk-summary-list__value">
+                <span id="AddressLine1" class="govuk-error-message field-validation-valid" data-valmsg-for="AddressLine1" data-valmsg-replace="true"></span>
+                <span id="City" class="govuk-error-message field-validation-valid" data-valmsg-for="City" data-valmsg-replace="true"></span>
+                <span id="Postcode" class="govuk-error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
+                
                  
-                {{ data['employer-address-line-one'] }}<br>
-                {{ data['employer-address-line-two'] }}<br>
-                {{ data['employer-address-line-town'] }}<br>
-                {{ data['employer-address-line-post-code'] }}
+                 {% for addressLine in data['addressdata'].split(',') %}
+                 {{ addressLine | safe }}<br>
+               {% endfor %}
+     
+
+     
             </dd>
             <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="employer-search-address">

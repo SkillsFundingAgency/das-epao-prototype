@@ -211,20 +211,12 @@
                 <span id="City" class="govuk-error-message field-validation-valid" data-valmsg-for="City" data-valmsg-replace="true"></span>
                 <span id="Postcode" class="govuk-error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
 
-                 {% if data['use-this-employer-address'] === 'yes' %}
+
                  25 Townsville House<br>
                  Townsend Avenue<br>
                  Coventry<br>
                  CV1 1AB
      
-                 {% else %}
-                
-                 
-                 {% for addressLine in data['addressdata'].split(',') %}
-                 {{ addressLine | safe }}<br>
-               {% endfor %}
-     
-                 {% endif %}
      
             </dd>
             <dd class="govuk-summary-list__actions">

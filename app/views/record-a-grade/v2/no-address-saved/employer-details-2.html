@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO record a grade
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <form method="post" action="employer-confirm-2">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Add recipient's details</h1>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="full">
+            Recipient's name
+          </label>
+          <div id="event-name-hint" class="govuk-hint">
+            This is the person who will receive the certificate on behalf of the employer. For example, line manager, apprentice or apprentice co-ordinator. 
+          </div>
+          <input class="govuk-input govuk-!-width-full" id="recipient-name-2" name="recipient-name-2" type="text"></div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="full">
+            <label class="govuk-label" for="full">
+              Department (optional)
+            </label>
+            <div id="event-name-hint" class="govuk-hint">
+              Add a department name. For example, Human Resources. 
+            </div>  
+            <input class="govuk-input govuk-!-width-full" id="dept-name-2" name="dept-name-2" type="text"></div>
+
+    
+
+<!-- CTA -->
+{{ govukButton({
+  text: "Continue"
+}) }}
+<!-- END CTA -->
+
+</form>
+
+  </main>
+</div>
+
+
+{% endblock %}
+{% endblock %}

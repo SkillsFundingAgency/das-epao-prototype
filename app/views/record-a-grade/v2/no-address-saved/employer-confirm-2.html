@@ -24,27 +24,22 @@
 
   <main class="govuk-main-wrapper">
 
-    <form method="post" action="employer-check-and-submit">
+    <form method="post" action="employer-check-and-submit-2">
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Confirm where we are sending the certificate</h1>
 
         <div class="govuk-inset-text">
-           <b> {{ data['recipient-name'] }}</b><br>
-            {{ data['dept-name'] }}<br>
-            <!--line one-->
+           <b> {{ data['recipient-name-2'] }}</b><br>
+            {{ data['dept-name-2'] }}<br>
+            {{ data['employer-name'] }}<br>
 
-            ONA Consulting Limited<br>
-             25 Townsville House<br>
-             Townsend Avenue<br>
-             Coventry<br>
-             CV1 1AB
-            
+            {% for addressLine in data['addressdata'].split(',') %}
+              {{ addressLine | safe }}<br>
+            {% endfor %}
 
 
-
-            <!--line one ENDS-->
 
         </div>
       </div>
