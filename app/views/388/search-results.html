@@ -1,0 +1,251 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO record a grade
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <form method="post" action="john-smith">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Completed assessments</h1>
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-1">Search</h2>
+        <p class="govuk-body">
+          Search for apprentices by name or ULN
+        <p>
+        <div class="govuk-input__wrapper govuk-!-margin-bottom-9"><input class="govuk-input govuk-input--width-30" id="initial-search-criteria" name="initial-search-criteria" type="text" spellcheck="false">
+          <button data-module="govuk-button" class="no-button"><div class="govuk-input__suffix" aria-hidden="true"></div></button>
+        </div>
+        
+       
+        <!--TABLE STARTS-->
+        <table class="govuk-table">
+          
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Apprentice</th>
+              <th scope="col" class="govuk-table__header">ULN</th>
+              <th scope="col" class="govuk-table__header">Employer</th>
+              <th scope="col" class="govuk-table__header">Training provider</th>
+              <th scope="col" class="govuk-table__header">Date requested</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                
+                {{ govukDetails({
+                  summaryText: "John Smith",
+                  classes: "threeeighteight",
+                  html: 
+                  "
+                
+                    <h2 class='govuk-heading-xl|l|m'>
+                      Assessment details
+                    </h2>
+                    <div class='govuk-grid-row'>
+                      <div class='govuk-grid-column-one-quarter'>
+                        <h3 class='govuk-heading-s'>
+                          Recorded by
+                        </h3>
+                      </div>
+                      <div class='govuk-grid-column-one-half'>
+                        <p>Preprod Epao0001</p>
+                      </div>
+                    </div>
+                    <div class='govuk-grid-row'>
+                      <div class='govuk-grid-column-one-quarter'>
+                        <h3 class='govuk-heading-s'>
+                          Standard
+                        </h3>
+                      </div>
+                      <div class='govuk-grid-column-one-half'>
+                        <p>Network engineer</p>
+                      </div>
+                    </div>
+                    <div class='govuk-grid-row'>
+                      <div class='govuk-grid-column-one-quarter'>
+                        <h3 class='govuk-heading-s'>
+                          Level
+                        </h3>
+                      </div>
+                      <div class='govuk-grid-column-one-half'>
+                        <p>4</p>
+                      </div>
+                    </div>
+                    <div class='govuk-grid-row'>
+                      <div class='govuk-grid-column-one-quarter'>
+                        <h3 class='govuk-heading-s'>
+                          Version
+                        </h3>
+                      </div>
+                      <div class='govuk-grid-column-one-half'>
+                        <p>1.0</p>
+                      </div>
+                    </div>
+                    <div class='govuk-grid-row'>
+                      <div class='govuk-grid-column-one-quarter'>
+                        <h3 class='govuk-heading-s'>
+                          Grade
+                        </h3>
+                      </div>
+                      <div class='govuk-grid-column-one-half'>
+                        <p>Pass</p>
+                      </div>
+                    </div>
+                    <div class='govuk-grid-row'>
+                      <div class='govuk-grid-column-full'>
+                        <h3 class='govuk-heading-s'>
+                          Option
+                        </h3>
+                      </div>
+                     
+                    </div>
+                    <div class='govuk-grid-row'>
+                      <div class='govuk-grid-column-one-quarter'>
+                        <h3 class='govuk-heading-s'>
+                          Apprenticeship start date
+                        </h3>
+                      </div>
+                      <div class='govuk-grid-column-one-half'>
+                        <p>30/09/2020</p>
+                      </div>
+                    </div>
+                    <div class='govuk-grid-row'>
+                      <div class='govuk-grid-column-one-quarter'>
+                        <h3 class='govuk-heading-s'>
+                          Achievement date
+                        </h3>
+                      </div>
+                      <div class='govuk-grid-column-one-half'>
+                        <p>28/10/2021</p>
+                      </div>
+                    </div>
+                    <div class='govuk-grid-row'>
+                      <div class='govuk-grid-column-one-quarter'>
+                        <h3 class='govuk-heading-s'>
+                          Certificate number
+                        </h3>
+                      </div>
+                      <div class='govuk-grid-column-one-half'>
+                        <p>00030461</p>
+                      </div>
+                    </div>
+                    <div class='govuk-grid-row govuk-!-margin-bottom-6'>
+                      <div class='govuk-grid-column-one-quarter'>
+                        <h3 class='govuk-heading-s'>
+                          Certificate status
+                        </h3>
+                      </div>
+                      <div class='govuk-grid-column-one-half'>
+                        <p>Sent to printer</p>
+                      </div>
+                    </div>
+                    <div class='govuk-grid-row '>
+                      <div class='govuk-grid-column-one-half'>
+                        <h3 class='govuk-heading-m'>
+                          Certificate details
+                        </h3>
+                        <p>Waiting to be delivered to:</p>
+                        <p>Shreya Smith<br>88 Thinking Road<br>Green Lane<br>Brillville<br>BR9 8YE</p>
+                      </div>
+                     
+                    </div>
+                    <h2 class='govuk-heading-m govuk-!-margin-top-6'>
+                      Certificate history
+                    </h2>
+                    <table class='govuk-table'>
+                     
+                      <thead class='govuk-table__head'>
+                        <tr class='govuk-table__row'>
+                          <th scope='col' class='govuk-table__header'>Date and time</th>
+                          <th scope='col' class='govuk-table__header'>Action</th>
+                          <th scope='col' class='govuk-table__header'>User</th>
+                          <th scope='col' class='govuk-table__header'>Status</th>
+                          <th scope='col' class='govuk-table__header'>Batch</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody class='govuk-table__body'>
+                        <tr class='govuk-table__row'>
+                          <td class='govuk-table__cell'>18/03/2021 15:09:29</td>
+                          <td class='govuk-table__cell'>Status</td>
+                          <td class='govuk-table__cell'>PrintFunction</td>
+                          <td class='govuk-table__cell'>SentToPrinter</td>
+                          <td class='govuk-table__cell'>550</td>
+                          
+                        </tr>
+                        <tr class='govuk-table__row'>
+                          <td class='govuk-table__cell'>18/03/2021 15:09:29</td>
+                          <td class='govuk-table__cell'>Printed</td>
+                          <td class='govuk-table__cell'>PrintFunction</td>
+                          <td class='govuk-table__cell'>Printed</td>
+                          <td class='govuk-table__cell'>120</td>
+                         
+                        </tr>
+                        <tr class='govuk-table__row'>
+                          <td class='govuk-table__cell'>18/03/2021 15:09:29</td>
+                          <td class='govuk-table__cell'>Approved</td>
+                          <td class='govuk-table__cell'>Test@test.com</td>
+                          <td class='govuk-table__cell'>Submitted</td>
+                          <td class='govuk-table__cell'></td>
+                         
+                        </tr>
+                        <tr class='govuk-table__row'>
+                          <td class='govuk-table__cell'>18/03/2021 15:09:29</td>
+                          <td class='govuk-table__cell'>SentForApproval</td>
+                          <td class='govuk-table__cell'>Test@test.com</td>
+                          <td class='govuk-table__cell'>ToBeApproved</td>
+                          <td class='govuk-table__cell'></td>
+                         
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    
+                  "
+                }) }}
+             
+              </td>
+              <td class="govuk-table__cell">1975826786</td>
+              <td class="govuk-table__cell"> </td>
+              <td class="govuk-table__cell">BCS, The Chartered Institute for IT</td>
+              <td class="govuk-table__cell">01/11/2021</td>
+            </tr>
+            
+          </tbody>
+        </table>
+        <!--TABLE ENDS-->
+      </div>
+    </div>
+
+
+
+</form>
+
+  </main>
+</div>
+
+
+{% endblock %}
+{% endblock %}
