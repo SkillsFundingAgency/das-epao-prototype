@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO record a grade
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/logged-in-blueheader.html" %} 
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <form method="get" action="employer-address-only-last-used">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Who would you like us to send the certificate to?</h1>
+
+        <p class="govuk-body">
+          You can send the certificate to either the employer or the apprentice. 
+        <p>
+          <p class="govuk-body">
+          If you are sending to the employer, you need to send it to the address where the apprenticeship took place.
+          If you are not sure, send the certificate to the apprentice's home address.
+        </p>
+       
+
+<!-- RADIO BUTTONS -->
+{{ govukRadios({
+  idPrefix: "send-the-certificate",
+  name: "send-the-certificate",
+  fieldset: {
+    legend: {
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "apprentice",
+      text: "Apprentice"
+    },
+    {
+      value: "employer",
+      text: "Employer"
+    }
+  ]
+}) }}
+<!-- END RADIO BUTTONS -->
+
+<!-- CTA -->
+{{ govukButton({
+  text: "Continue"
+}) }}
+<!-- END CTA -->
+
+      </div>
+    </div>
+
+
+
+</form>
+
+  </main>
+</div>
+
+
+{% endblock %}
+{% endblock %}
