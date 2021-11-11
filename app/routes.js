@@ -152,6 +152,14 @@ router.post('/record-a-grade/v2/address-saved/send-the-certificate', function (r
     } 
 });
 
+router.post('/record-a-grade/v2/address-saved/employer-last-address', function (req, res) {
+	if(req.session.data['employer-last-address'] == 'yes'){
+		res.redirect('employer-details');
+	} else if(req.session.data['employer-last-address'] == 'no'){
+        res.redirect('employer-search-address');
+    } 
+});
+
 
 // record-a-grade: employer search address (saved address)
 router.post('/record-a-grade/v1/address-saved/employer-find-address', function (req, res) {
