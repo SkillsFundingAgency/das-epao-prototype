@@ -18,7 +18,7 @@ router.post('/record-a-grade/v2/no-address-saved/send-the-certificate', (req, re
 	if(req.session.data['send-the-certificate'] == 'apprentice'){
 		res.redirect('apprentice-search-address');
 	} else if(req.session.data['send-the-certificate'] == 'employer'){
-        res.redirect('employer-address');
+        res.redirect('employer-search-address');
 	} else if(req.session.data['send-the-certificate'] == 'provider'){
         res.redirect('provider-address');
     }
@@ -117,7 +117,7 @@ router.post('/record-a-grade/v1/address-saved/send-the-certificate', (req, res) 
 
 router.post('/record-a-grade/v2/address-saved/send-the-certificate', (req, res) => {
 	if(req.session.data['send-the-certificate'] == 'employer'){
-        res.redirect('employer-address-saved');
+        res.redirect('employer-search-address');
     }
 });
 
@@ -141,6 +141,17 @@ router.post('/record-a-grade/v2/address-saved/employer-address-saved', function 
         res.redirect('employer-search-address');
     } 
 });
+
+router.post('/record-a-grade/v2/address-saved/send-the-certificate', function (req, res) {
+	if(req.session.data['choose-employer-address'] == 'address-system'){
+		res.redirect('employer-details');
+	} else if(req.session.data['choose-employer-address'] == 'address-last-used'){
+        res.redirect('employer-details');
+	} else if(req.session.data['choose-employer-address'] == 'search-address'){
+        res.redirect('employer-search-address');
+    } 
+});
+
 
 // record-a-grade: employer search address (saved address)
 router.post('/record-a-grade/v1/address-saved/employer-find-address', function (req, res) {
