@@ -1,1 +1,8 @@
-{"serviceName":"Apprenticeship assessment service"}
+{
+  "serviceName": "Apprenticeship assessment service",
+  "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
+}

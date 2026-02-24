@@ -1,0 +1,192 @@
+{% extends "layouts/assessment-service.html" %}
+
+{% block pageTitle %}
+  Check and sumbit the assessment details | {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  <h1 class="govuk-heading-xl">Check and submit the assessment details</h1>
+
+  {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+  {{ govukInsetText({
+    html: "<p>These details will be on the apprentice’s certificate.</p>
+
+          <p>If the name, standard or level is incorrect, you need to agree on the correct details along with the training provider and the employer. Then the training provider needs to update the Individual Learner Record (ILR).</p>"
+  }) }}
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+  <h2 class="govuk-heading-m">Apprentice details</h2>
+
+  {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          text: "First name"
+        },
+        value: {
+          text: "Nero"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "Change first name"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Last name"
+        },
+        value: {
+          text: data['lastName']
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "Change last name"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "ULN"
+        },
+        value: {
+          html: data['uniqueLearnerNumber']
+        }
+      }
+    ]
+  }) }}
+  
+  <h2 class="govuk-heading-m">Apprenticeship details</h2>
+
+  {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          text: "Standard"
+        },
+        value: {
+          text: "Mechanical engineering (1)"
+        }
+      },
+      {
+        key: {
+          text: "Level"
+        },
+        value: {
+          text: "4"
+        }
+      },
+      {
+        key: {
+          text: "Version"
+        },
+        value: {
+          text: data['version']
+        },
+        actions: {
+          items: [
+            {
+              href: "version",
+              text: "Change",
+              visuallyHiddenText: "Change version"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Option"
+        },
+        value: {
+          text: data['option']
+        },
+        actions: {
+          items: [
+            {
+              href: "option",
+              text: "Change",
+              visuallyHiddenText: "Change option"
+            }
+          ]
+        }
+      },
+             {
+        key: {
+          text: "Grade"
+        },
+        value: {
+          text: data['grade']
+        },
+        actions: {
+          items: [
+            {
+              href: "grade",
+              text: "Change",
+              visuallyHiddenText: "Change grade"
+            }
+          ]
+        }
+      },      {
+        key: {
+          text: "Achievement date"
+        },
+        value: {
+          text: data['achievementDate-day'] + " " + data['achievementDate-month'] + " " + data['achievementDate-year']
+        },
+        actions: {
+          items: [
+            {
+              href: "achievement-date",
+              text: "Change",
+              visuallyHiddenText: "Change achievement date"
+            }
+          ]
+        }
+      }
+    ]
+  }) }}
+
+  {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+  {{ govukWarningText({
+    text: "By recording a grade for this apprentice, you are confirming that the apprentice has met the minimum duration of the apprenticeship.",
+    iconFallbackText: "Warning"
+  }) }}
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Confirm and submit",
+      href: "assessment-recorded",
+      type: "submit",
+      isStartButton: false
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
+

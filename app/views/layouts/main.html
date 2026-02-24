@@ -1,0 +1,20 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{# FYI - This is your standard GOV.UK branded template. If you want to use the DfE Frontend instead, you should be pointing your page to the 'dfe-frontend.html' layout instead. #}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{% block header %}
+
+    {{ govukHeader() }}
+    {{ govukServiceNavigation({
+        serviceName: serviceName
+    })}}
+
+{% endblock %}
+
+

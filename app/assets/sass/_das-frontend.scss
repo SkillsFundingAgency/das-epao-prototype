@@ -1,0 +1,103 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+// 
+// Add extra styles here
+
+
+// This CSS was shamelessly stolen from the pre-productino version of the Apprenticeship assessment service. It may not be an accurate reflection of the current live CSS, but it is a starting point to get the dashboard up and running quickly.
+
+.dashboard-boxes {
+  margin:0 -10px;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -ms-flex-wrap:wrap;
+  flex-wrap:wrap
+}
+.dashboard-box {
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-flex:1;
+  -ms-flex-positive:1;
+  flex-grow:1;
+  padding:0 10px;
+  margin-bottom:20px;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  width:100%
+}
+.das-wrap {
+  word-wrap:break-word;
+  overflow-wrap:break-word
+}
+.das-no-wrap {
+  white-space:nowrap
+}
+@media(min-width:40.0625em) {
+  .dashboard-box {
+    width:33.333333%
+  }
+}
+@media(min-width:40.0625em) {
+  .dashboard-box--two-thirds {
+    width:66.666666%
+  }
+}
+.dashboard-box__content {
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  width:100%;
+  border:1px solid #bfc1c3
+}
+.dashboard-box--grey .dashboard-box__content {
+  background-color:#f8f8f8;
+  border:0 none
+}
+.dashboard-box--green .dashboard-box__content {
+  border-color:#28a197
+}
+.dashboard-box--lightblue .dashboard-box__content {
+  border-color:#2b8cc4
+}
+.dashboard-box--darkblue .dashboard-box__content {
+  border-color:#005ea5
+}
+.dashboard-box__header {
+  color:#fff;
+  padding:15px;
+  margin-top:0;
+}
+
+.dashboard-box__header.dashboard-box--force-min-height {
+  min-height: 9rem;
+}
+
+.dashboard-box--green .dashboard-box__header {
+  background-color:#28a197
+}
+.dashboard-box--lightblue .dashboard-box__header {
+  background-color:#2b8cc4
+}
+.dashboard-box--darkblue .dashboard-box__header {
+  background-color:#005ea5
+}
+.dashboard-box__body {
+  padding:15px 15px 0
+}
+.dashboard-box__body--no-top-padding {
+  padding:0 15px 0
+}
+.dashboard-box__count,
+.dashboard-box__name {
+  color:#fff;
+  font-weight:700;
+  padding-top: 0;
+}
