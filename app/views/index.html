@@ -7,7 +7,9 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+     {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+
+
 
     <h1 class="govuk-heading-xl">
       {{ serviceName }} prototype
@@ -26,6 +28,12 @@
                          class="govuk-link govuk-link--no-visited-state">Record a grade, Start page</a>
                </li>
                <br>
+
+               {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+                         {{ govukWarningText({
+               text: "Be careful when updating the GOV.UK Prototype Kit and GOV Frontend plugins. Their newer versions remove styling for heading content areas that we use for the menus of this prototype. If you want to go ahead with those updates, be prepared to replicate that CSS manually.",
+               iconFallbackText: "Warning"
+               }) }}
 
           <details class="govuk-details">
                <summary class="govuk-details__summary">
@@ -96,7 +104,7 @@
           -->
 
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+    <!-- {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %} -->
   </div>
 
   
