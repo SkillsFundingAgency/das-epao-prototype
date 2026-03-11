@@ -1,0 +1,88 @@
+{% extends "layouts/assessment-service.html" %}
+
+{% block pageTitle %}
+  Confirm this is the correct apprentice | {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Confirm this is the correct apprentice</h1>
+
+    {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Nero " + data['lastName']
+          }
+        },
+        {
+          key: {
+            text: "ULN"
+          },
+          value: {
+            text: data['uniqueLearnerNumber']
+          }
+        },
+        {
+          key: {
+            text: "Standard"
+          },
+          value: {
+            text: "Mechanical engineer"
+          }
+        },
+        {
+          key: {
+            text: "Level"
+          },
+          value: {
+            text: "4"
+          }
+        },
+        {
+          key: {
+            text: "Learner start date"
+          },
+          value: {
+            text: "22 September 2020"
+          }
+        }
+      ]
+    }) }}
+
+    <p class="govuk-body">If the name, standard or level is incorrect, you need to agree on the correct details with the training provider and employer. Once the training provider updates the Individualised Learner Record (ILR), return here and continue.</p>
+
+
+    {{ govukButton({
+      text: "Continue",
+      type: "submit",
+      href: "version",
+      isStartButton: false
+    }) }}
+
+  </form>
+
+  <p class="govuk-body"><a href="../record-a-grade" title="">Search again</a> if this is not the correct apprentice.</p>
+
+  </div>
+</div>
+
+{% endblock %}
+

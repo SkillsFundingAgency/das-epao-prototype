@@ -14,7 +14,11 @@
     <h1 class="govuk-heading-xl">
       {{ serviceName }} prototype
     </h1>
-
+               {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+                         {{ govukWarningText({
+               text: "Be careful when updating the GOV.UK Prototype Kit and GOV Frontend plugins. Their newer versions remove styling for heading content areas that we use for the menus of this prototype. If you want to go ahead with those updates, be prepared to replicate that CSS manually.",
+               iconFallbackText: "Warning"
+               }) }}
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
           <h2 class="govuk-heading-l">'Record a grade' prototype</h2>
@@ -28,12 +32,6 @@
                          class="govuk-link govuk-link--no-visited-state">Record a grade, Start page</a>
                </li>
                <br>
-
-               {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
-                         {{ govukWarningText({
-               text: "Be careful when updating the GOV.UK Prototype Kit and GOV Frontend plugins. Their newer versions remove styling for heading content areas that we use for the menus of this prototype. If you want to go ahead with those updates, be prepared to replicate that CSS manually.",
-               iconFallbackText: "Warning"
-               }) }}
 
           <details class="govuk-details">
                <summary class="govuk-details__summary">
@@ -59,6 +57,37 @@
                          <li>That includes the 'Change' links for 'Given name' and 'Family name' on the 'Check your answers' page</li>
                          <li>The service navigation doesn’t change the ‘active’ state based on which section the user is in. Currently it’s hardcoded to always highlight ‘Record a grade’, even from the dashboard. The ideal solution to this is probably a combination of layout and include files. I’ve left this out for now due to time constraints.</li>
                          <li>There are links throughout the prototype that have ‘v1’ in their hrefs that ideally would be powered by a sitewide variable instead. It’s something I’ve not implemented personally before, but I know it works. I’ve left it out for now due to time constraints.</li>
+                    </ul>
+               </div>
+          </details>
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+          </section>
+
+          <section id="version2">
+          <span class="govuk-caption-m">March 2026</span>
+          <h3 class="govuk-heading-m">Version 2</h3>
+          <ul class="govuk-list">
+
+               <li><a href="/v2/assessment-service-start"
+                         class="govuk-link govuk-link--no-visited-state">Record a grade, Start page</a>
+               </li>
+               <br>
+          <details class="govuk-details">
+               <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                         Changelog
+                    </span>
+               </summary>
+               <div class="govuk-details__text">
+                    <h4>This version includes:</h4>
+                    <ul class="govuk-list govuk-list--bullet">
+                         <li>Copy tweaks to the dashboard. Change the following values:</li>
+                              <ul class="govuk-list">
+                                   <li>□ Standards changed from 105 to 0</li>
+                                   <li>□ Pipeline changed from 0 to 12</li>
+                              </ul>
+                         <li>Updated the copy on the Versions page replacing 'Version 1.3' with 'Version 2.0'</li>
+                         <li>Added a new page in for when 'We cannot find the apprentice details'. This is accessed by removing a value in the ULN field (leave it blank)</li>
                     </ul>
                </div>
           </details>
