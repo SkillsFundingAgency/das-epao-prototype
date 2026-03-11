@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <p>If you're an end-point assessor, you can use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>view the standards and versions you are assessing</li>
+        <li>see upcoming assessments in your pipeline</li>
+        <li>record assessments and request certificates</li>
+        <li>add new standards or versions</li>
+      </ul>
+
+      <p>You'll need a new GOV.UK One Login to set up or access an account. You can create one in the service using a work email address.</p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/v1",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Before you start
+      </h2>
+
+      <p>
+        If your organisations does not have an existing account, you'll need to join the Apprenticeships assessment service.
+      </p>
+
+      <p>
+        Contact our helpdesk:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>email <a href="mailto:helpdesk@manage-apprenticeships.service.gov.uk">helpdesk@manage-apprenticeships.service.gov.uk</a></li>
+        <li>phone 08000 150 600</li>
+      </ul>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <!-- <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>-->
+
+    </div>
+  </div>
+
+{% endblock %}

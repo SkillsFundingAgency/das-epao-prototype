@@ -1,0 +1,125 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{# FYI - This is the DfE Frontend layout. If you want to use the core GOV.UK Frontend instead, you should be pointing your page to the 'main.html' layout instead.#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/sass/dfe-frontend.scss" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% set htmlClasses = "dfe-frontend" %}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{% block header %}
+  <header class="govuk-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__logo">
+        <a href="#" class="govuk-header__link govuk-header__link--homepage">
+            <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+        </a>
+      </div>
+      <div class="govuk-header__content">
+        <nav aria-label="Menu" class="govuk-header__navigation">
+          <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" hidden="">
+            Menu
+          </button>
+          <ul id="navigation" class="govuk-header__navigation-list">          
+            <li class="govuk-header__navigation-item">            
+              <a class="govuk-header__link" href="#">            
+                Contact            
+              </a>            
+            </li>    
+            <li class="govuk-header__navigation-item">  
+              <a class="govuk-header__link" href="#">            
+                Settings <span aria-hidden="true">▼</span>            
+              </a>            
+            </li>          
+            <li class="govuk-header__navigation-item">            
+              <a class="govuk-header__link" href="#">            
+                Sign out            
+              </a>            
+            </li>
+          </ul>
+        </nav>    
+      </div>
+  </div>
+  </header>
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+<section aria-label="Service information" class="govuk-service-navigation"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <div class="govuk-service-navigation__service-name-container">
+        <!-- Version where the service name is  a link
+        <span class="govuk-service-navigation__service-name">
+          <a href="/v1" class="govuk-service-navigation__link">
+                {{ serviceName }}
+          </a>
+        </span> -->
+        <!-- version where the service name isn't a link: it'd be nice to A/B test these in some capacity -->
+        <span class="govuk-service-navigation__service-name">
+                {{ serviceName }}
+        </span>
+      </div>
+    <div class="govuk-service-navigation__user-details-container">
+        <span class="govuk-service-navigation__user-name govuk-body-s">
+            User Name
+        </span>
+        <span class="govuk-service-navigation__organisation-name govuk-body-s">
+            <strong>Example organisation name (EPA002113)</strong>
+        </span>
+    </div>
+    <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden aria-hidden="true">
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/v1">
+              Home
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="#">
+              Pipeline
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="/v1/record-a-grade" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Record a grade</strong>
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="#">
+              Completed assessments
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="#">
+              Standards
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="#">
+              Organisation details
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="/assets/js/dfefrontend.min.js"></script>
+{% endblock %}

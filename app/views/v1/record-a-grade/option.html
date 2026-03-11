@@ -1,0 +1,77 @@
+{% extends "layouts/assessment-service.html" %}
+
+{% block pageTitle %}
+  Choose the option for Mechanical engineer | {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  {% if data['grade'] and data['achievementDate-day'] and data['achievementDate-month'] and data['achievementDate-year'] %}
+    <form method="post" action="check-your-answers">
+  {% else %}
+    <form method="post" action="grade">
+  {% endif %}
+
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  {{ govukRadios({
+    name: "option",
+    fieldset: {
+      legend: {
+        text: "Choose the option for Mechanical engineer",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+    value: data['option'],
+    items: [
+      {
+        value: "Aerospace mechanics",
+        text: "Aerospace mechanics"
+      },
+      {
+        value: "Biocybernetic mechanics",
+        text: "Biocybernetic mechanics"
+      },
+      {
+        value: "Electrical mechanics",
+        text: "Electrical mechanics"
+      },
+      {
+        value: "Structural mechanics",
+        text: "Structural mechanics"
+      },
+      {
+        value: "Vehicular mechanics",
+        text: "Vehicular mechanics"
+      }
+    ]
+  }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        type: "submit",
+        isStartButton: false
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+

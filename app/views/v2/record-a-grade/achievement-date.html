@@ -1,0 +1,72 @@
+{% extends "layouts/assessment-service.html" %}
+
+{% block pageTitle %}
+  What is the apprenticeship achievement date? | {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  <form method="post" action="check-your-answers">
+
+ {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+  {{ govukDateInput({
+    id: "achievement-date",
+    namePrefix: "achievementDate",
+    fieldset: {
+      legend: {
+        text: "What is the apprenticeship achievement date?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+    hint: {
+      html: "<p>The date you determined the apprentice completed the apprenticeship after internal quality assurance.</p>
+      <p>For example, 15 10 2017</p>"
+    },
+    items: [
+      {
+        name: "day",
+        value: data['achievementDate-day'],
+        classes: "govuk-input--width-2"
+      },
+      {
+        name: "month",
+        value: data['achievementDate-month'],
+        classes: "govuk-input--width-2"
+      },
+      {
+        name: "year",
+        value: data['achievementDate-year'],
+        classes: "govuk-input--width-4"
+      }
+    ]
+  }) }}
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Continue",
+      type: "submit",
+      isStartButton: false
+    }) }}
+
+  </form>
+
+  </div>
+</div>
+
+{% endblock %}
+

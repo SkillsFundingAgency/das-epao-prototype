@@ -1,165 +1,138 @@
+{% extends "layouts/prototype-home.html" %}
 
-{% extends "layout.html" %}
-
-{% block pageTitle %}
-  GOV.UK Prototype Kit
-{% endblock %}
+{% set pageName="Home" %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      
-      <span class="govuk-caption-xl">Continuous improvement</span>
-      <h1 class="govuk-heading-xl">EPAO prototypes - test</h1>
-      
-           
-      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-		   <!-- START Completed Assessments -->
-		   <div class="govuk-accordion__section ">
-		    <div class="govuk-accordion__section-header">
-		      <h2 class="govuk-accordion__section-heading">
-		        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-		         Completed assessments - improved search and info
-		        </span>
-		      </h2>
-		      
-		    </div>
-		    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-		      <ul class="govuk-list">
-				<li>Jira: <a href="https://skillsfundingagency.atlassian.net/browse/CIDES-388" class="govuk-link govuk-link--no-visited-state" target="_blank">design ticket 388</a></li>
-				<li>Lucid: <a href="https://lucid.app/lucidspark/480422d8-4a49-4e60-9151-e74b1ed9223a/edit?beaconFlowId=F289D8F3C33DB74C&invitationId=inv_4c7f6681-6b40-4ee1-b918-87a22ecfdef8#" class="govuk-link govuk-link--no-visited-state" target="_blank">design ticket 388</a></li>
-			      <li>Prototype: <a href="388/completed-assessments" class="govuk-link">VER 1 -Completed assessment page</a></li>
-			      <li>Prototype: <a href="388/v2/completed-assessments" class="govuk-link">VER 2 - Completed assessment page</a></li>
-		      </ul>
-		    </div>
-		  </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-		<!-- START record a grade -->
-		<div class="govuk-accordion__section ">
+     {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
 
-			<div class="govuk-accordion__section-header">
-				<h2 class="govuk-accordion__section-heading">
-					<span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-					  Record a grade
-					</span>
-				</h2>
-			</div>
 
-			<div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-				<ul class="govuk-list">
-					<li><b>Certificate address</b></li>
-					<li>Jira: <a href="https://skillsfundingagency.atlassian.net/browse/CIDES-356" class="govuk-link govuk-link--no-visited-state" target="_blank">design ticket 356</a></li>
-					<li>UX: <a href="https://lucid.app/lucidspark/invitations/accept/inv_21b4856e-3222-4dcb-8ad3-a29fa2f92bb7" class="govuk-link govuk-link--no-visited-state" target="_blank">Lucid board (UX materials and journey flow)</a></li>
-					<li>UR: <a href="https://drive.google.com/drive/folders/1hDMP1HlDEpXC42ga06DxMzHXtZJDPOZX" class="govuk-link govuk-link--no-visited-state" target="_blank">prototype testing findings</a></li>
-				</ul>
 
-				<p class="govuk-body">
-					<b>Prototype V2<br></b>
-					Sprint 19/09/2021 to 12/10/2021 
-				<p>
-				<ul class="govuk-list govuk-list--bullet">
-					<li><a href="record-a-grade/v2/no-address-saved/achievement-date">Start (from address pages - <b>no presaved</b> employer last used address)</a></li>
-					<li><a href="record-a-grade/v2/address-saved/certificate-receiver-only-last-used.html">Employer page design - <b>presaved</b> employer last used address but no address we hold)</a></li>
+    <h1 class="govuk-heading-xl">
+      {{ serviceName }} prototype
+    </h1>
+               {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+                         {{ govukWarningText({
+               text: "Be careful when updating the GOV.UK Prototype Kit and GOV Frontend plugins. Their newer versions remove styling for heading content areas that we use for the menus of this prototype. If you want to go ahead with those updates, be prepared to replicate that CSS manually.",
+               iconFallbackText: "Warning"
+               }) }}
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-					<details class="govuk-details" data-module="govuk-details">
-						<summary class="govuk-details__summary">
-						  <span class="govuk-details__summary-text">
-							List of page variations
-						  </span>
-						</summary>
-						<div class="govuk-details__text">
-							<ul class="govuk-list govuk-list--bullet">
-								<li><a href="record-a-grade/v2/address-saved/certificate-receiver">Start (from address pages - <b>presaved</b> employer last used address)</a></li>
-								<li><a href="record-a-grade/v2/no-address-saved/apprentice-select-address-0">Apprentice - 0 address found</a></li>
-								<li><a href="record-a-grade/v2/no-address-saved/apprentice-select-address-1">Apprentice - 1 address found</a></li>
-								<li><a href="record-a-grade/v2/no-address-saved/employer-select-address-0">Employer - 0 address found</a></li>
-								<li><a href="record-a-grade/v2/no-address-saved/employer-select-address-1">Employer - 1 address found</a></li>
+          <h2 class="govuk-heading-l">'Record a grade' prototype</h2>
 
-							</ul>
-							</div>
-					  </details>
+          <section id="version1">
+          <span class="govuk-caption-m">February 2025</span>
+          <h3 class="govuk-heading-m">Version 1</h3>
+          <ul class="govuk-list">
 
-				</ul>
+               <li><a href="/v1/assessment-service-start"
+                         class="govuk-link govuk-link--no-visited-state">Record a grade, Start page</a>
+               </li>
+               <br>
 
-				<p class="govuk-body">
-					<b>Prototype V1<br></b>
-					Sprint 15/09/2021 to 28/09/2021 
-				<p>
-				<ul class="govuk-list govuk-list--bullet">
-					<li><a href="record-a-grade/v1/no-address-saved/achievement-date">Start (from address pages - <b>no presaved</b> employer last used address)</a></li>
-					<li><a href="record-a-grade/v1/address-saved/certificate-receiver">Start (from address pages - <b>presaved</b> employer last used address)</a></li>
-				</ul>
+          <details class="govuk-details">
+               <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                         Changelog
+                    </span>
+               </summary>
+               <div class="govuk-details__text">
+                    <h4>This version includes:</h4>
+                    <ul class="govuk-list govuk-list--bullet">
+                         <li>Creation of the initial prototype.</li>
+                         <li>The framework to run both the GOV.UK Frontend and DfE Frontend in one prototype</li>
+                         <li>The start page</li>
+                         <li>The dashboard</li>
+                         <li>All the questions pages</li>
+                         <li>The 'Check your answers' page</li>
+                         <ul><li>This includes the 'shortcutting' functionality to skip questions if they've already been answered once</li></ul>
+                         <li>The success page</li>
+                    </ul>
+                    <h4>What isn't included (yet):</h4>
+                    <ul class="govuk-list govuk-list--bullet">
+                         <li>Anything that would be outside of the 'Record a grade' journey</li>
+                         <li>That includes the 'Change' links for 'Given name' and 'Family name' on the 'Check your answers' page</li>
+                         <li>The service navigation doesn’t change the ‘active’ state based on which section the user is in. Currently it’s hardcoded to always highlight ‘Record a grade’, even from the dashboard. The ideal solution to this is probably a combination of layout and include files. I’ve left this out for now due to time constraints.</li>
+                         <li>There are links throughout the prototype that have ‘v1’ in their hrefs that ideally would be powered by a sitewide variable instead. It’s something I’ve not implemented personally before, but I know it works. I’ve left it out for now due to time constraints.</li>
+                    </ul>
+               </div>
+          </details>
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+          </section>
 
-			</div>
+          <section id="version2">
+          <span class="govuk-caption-m">March 2026</span>
+          <h3 class="govuk-heading-m">Version 2</h3>
+          <ul class="govuk-list">
 
-		</div>
-		<!-- END record a grade -->
-	      
-	      <!-- START Cancellation -->
-		  <div class="govuk-accordion__section ">
-		    <div class="govuk-accordion__section-header">
-		      <h2 class="govuk-accordion__section-heading">
-		        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-		          Cancel application
-		        </span>
-		      </h2>
-		      <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
-		        Cancellation of Stage 2 part of the application process<br>
-		      </div>
-		    </div>
-		    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-		      <ul class="govuk-list">
-			      <li><a href="cancel-application/index.html" class="govuk-link">Start</a></li>
-			      <li><a href="cancel-application/feedback-start.html" class="govuk-link">Start (from feedback)</a></li>
-		      </ul>
-		    </div>
-		  </div>
-		  
-		  <!-- START Withdraw admin -->
-		  <div class="govuk-accordion__section ">
-		    <div class="govuk-accordion__section-header">
-		      <h2 class="govuk-accordion__section-heading">
-		        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-		          Withdraw (admin)
-		        </span>
-		      </h2>
-		    </div>
-		    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-		      <ul class="govuk-list">
-			      <li><a href="withdraw-applications-admin/index.html" class="govuk-link">Start journey (dashboard)</a></li>
-			      <hr>
-			      <li><a href="withdraw-applications-admin/feedback-application-overview.html" class="govuk-link">Feedback application overview</a></li>
-			      <li><a href="withdraw-applications-admin/feedback-complete-review.html" class="govuk-link">Feedback review</a></li>
-			      <li><a href="withdraw-applications-admin/feedback-confirmation.html" class="govuk-link">Feedback confirmation</a></li>
-		      </ul>
-		    </div>
-		  </div>
-		  
-		  <!-- START project Y -->
-		  <div class="govuk-accordion__section ">
-		    <div class="govuk-accordion__section-header">
-		      <h2 class="govuk-accordion__section-heading">
-		        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-		          Cancel application (add 'cancelled' to Standard and organisation tabs)
-		        </span>
-		      </h2>
-		    </div>
-		    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-		      <ul class="govuk-list">
-			      <li><a href="withdraw-applications-admin/index.html" class="govuk-link">Start journey (dashboard)</a></li>
-		      </ul>
-		    </div>
-		  </div>
-		  
-		  <!-- END project -->
- 
- 
+               <li><a href="/v2/assessment-service-start"
+                         class="govuk-link govuk-link--no-visited-state">Record a grade, Start page</a>
+               </li>
+               <br>
+          <details class="govuk-details">
+               <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                         Changelog
+                    </span>
+               </summary>
+               <div class="govuk-details__text">
+                    <h4>This version includes:</h4>
+                    <ul class="govuk-list govuk-list--bullet">
+                         <li>Copy tweaks to the dashboard screen changing the values for Standards, Pipeline and Completed assessments</li>
+                         <li>Updated the copy on the Versions page replacing 'Version 1.3' with 'Version 2.0'</li>
+                         <li>Added a new page for when 'We cannot find the apprentice details'</li>
+                    </ul>
+               </div>
+          </details>
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+          </section>
+          
+          <!-- Example of how to add a new section for a different version of the prototype. You can copy and paste this whole section and update the content as needed. Remember to update the section ID, version number, date, links, and changelog details. 
+
+          <section id="versionXYZ">
+          <span class="govuk-caption-m">1 Month Year</span>
+          <h3 class="govuk-heading-m">Version XYZ</h3>
+          <ul class="govuk-list">
+
+               <li><a href="/digital-certificates/v1"
+                         class="govuk-link govuk-link--no-visited-state">Link name goes here</a>
+               </li>
+               <br>
+
+          <details class="govuk-details">
+               <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                         Changelog
+                    </span>
+               </summary>
+               <div class="govuk-details__text">
+                    <ul class="govuk-list govuk-list--bullet">
+                         <li>Some words here describing the changes in this version</li>
+                         <ul class="govuk-list govuk-list--bullet">
+                              <li>???</li>
+                              <li>???</li>
+                              <li>???</li>
+                         </ul>
+                         <li>???</li>
+                         <ul class="govuk-list govuk-list--bullet">
+                              <li>???</li>
+                              <li>???</li>
+                              <li>???</li>
+                         </ul>
+               </div>
+          </details>
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+          </section>
+          -->
+
+
+    <!-- {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %} -->
   </div>
+
+  
 </div>
-      
-      
-    </div>
-  </div>
 
 {% endblock %}

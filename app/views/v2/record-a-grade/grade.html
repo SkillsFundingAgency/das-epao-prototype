@@ -1,0 +1,110 @@
+{% extends "layouts/assessment-service.html" %}
+
+{% block pageTitle %}
+  What grade did the apprentice achieve? | {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  {% if data['grade'] and data['achievementDate-day'] and data['achievementDate-month'] and data['achievementDate-year'] %}
+    <form method="post" action="check-your-answers">
+  {% else %}
+    <form method="post" action="achievement-date">
+  {% endif %}  
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  {{ govukRadios({
+    name: "grade",
+    fieldset: {
+      legend: {
+        text: "What grade did the apprentice achieve?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+    hint: {
+      html: "<div class=\"govuk-warning-text\">
+              <span class=\"govuk-warning-text__icon\" aria-hidden=\"true\">!</span>
+              <strong class=\"govuk-warning-text__text\">
+                <span class=\"govuk-visually-hidden\">Warning</span>
+                You are not expected to record partial elements or course withdrawals
+              </strong>
+            </div>"
+    },
+    value: data['grade'],
+    items: [
+      {
+      value: "Pass",
+      text: "Pass"
+      },
+      {
+      value: "Credit",
+      text: "Credit"
+      },
+      {
+      value: "Merit",
+      text: "Merit"
+      },
+      {
+      value: "Distinction",
+      text: "Distinction"
+      },
+      {
+      value: "Pass with excellence",
+      text: "Pass with excellence"
+      },
+      {
+      value: "Outstanding",
+      text: "Outstanding"
+      },
+      {
+      value: "No grade awarded",
+      text: "No grade awarded"
+      },
+      {
+      divider: "or"
+      },
+      {
+      value: "Fail",
+      text: "Fail"
+      }
+    ]
+  }) }}
+
+  {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+  {{ govukDetails({
+    summaryText: "What do ‘No grade awarded’ and ‘Fail’ mean?",
+    html: "<p>No grade awarded: A grade is awarded when the apprentice successfully completes the apprenticeship standard. For some standards there will be no grade awarded. In these cases select 'No grade awarded'.</p>
+
+    <p>Fail: Record an assessment as a fail if the apprentice has not passed the assessment and no certificate will be applied for.</p>"
+  }) }}
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Continue",
+      type: "submit",
+      isStartButton: false
+    }) }}
+
+  </form>
+
+  </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,73 @@
+{% extends "layouts/assessment-service.html" %}
+
+{% block pageTitle %}
+  Which version of the Mechanical engineer standard did you assess? | {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  {% if data['option'] and data['grade'] and data['achievementDate-day'] and data['achievementDate-month'] and data['achievementDate-year'] %}
+    <form method="post" action="check-your-answers">
+  {% else %}
+    <form method="post" action="option">
+  {% endif %}
+
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  {{ govukRadios({
+    name: "version",
+    fieldset: {
+      legend: {
+        text: "Which version of the Mechanical engineer standard did you assess?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+    value: data['version'],
+    items: [
+      {
+        value: "Version 1.0",
+        text: "Version 1.0"
+      },
+      {
+        value: "Version 1.1",
+        text: "Version 1.1"
+      },
+      {
+        value: "Version 1.2",
+        text: "Version 1.2"
+      },
+      {
+        value: "Version 1.3",
+        text: "Version 1.3"
+      }
+    ]
+  }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        type: "submit",
+        isStartButton: false
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+

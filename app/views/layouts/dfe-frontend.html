@@ -1,0 +1,32 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{# FYI - This is the DfE Frontend layout. If you want to use the core GOV.UK Frontend instead, you should be pointing your page to the 'main.html' layout instead.#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/sass/dfe-frontend.scss" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% set htmlClasses = "dfe-frontend" %}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{% block header %}
+
+    {{ govukHeader() }}
+    {{ govukServiceNavigation({
+        serviceName: "serviceName"
+        serviceURL: "/v1/",
+    })}}
+
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="/assets/js/dfefrontend.min.js"></script>
+{% endblock %}
