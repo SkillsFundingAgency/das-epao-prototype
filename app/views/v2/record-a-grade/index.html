@@ -1,0 +1,91 @@
+{% extends "layouts/assessment-service.html" %}
+
+{% block pageTitle %}
+  Record a grade | {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% set html %}
+  <p class="govuk-notification-banner__heading">
+    You no longer need to provide apprentices' addresses 
+  </p>
+  <p>
+    Apprentices can now access their own certificates.
+    </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
+
+<h1 class="govuk-heading-xl" style="margin-bottom: 20px;">Record a grade</h1>
+
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "Record all apprenticeship assessment grades. Record a 'fail' if a fail is defined in the assessment plan.",
+  iconFallbackText: "Warning"
+}) }}
+
+<form method="post" action="/v2/record-a-grade/confirm-correct-apprentice">
+
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  {{ govukInput({
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Last name",
+      classes: "govuk-label--m",
+      isPageHeading: false
+    },
+    hint: {
+        text: "For example, Smith"
+      },
+    id: "last-name",
+    name: "lastName",
+    value: data['lastName'] or "Scarva"
+  }) }}
+
+  {{ govukInput({
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Unique learner number",
+      classes: "govuk-label--m",
+      isPageHeading: false
+    },
+    hint: {
+        text: "For example, 1234567890"
+      },
+    id: "unique-learner-number",
+    name: "uniqueLearnerNumber",
+    value: data['uniqueLearnerNumber'] or "661408802113"
+  }) }}
+
+  {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+  {{ govukDetails({
+    summaryText: "What is a ULN?",
+    text: "The ULN is a 10-digit reference number. It's used to access the online Personal Learning Record (PLR) of anyone aged 14 and over in UK education or training, including apprenticeships."
+  }) }}
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Continue",
+      type: "submit",
+      isStartButton: false
+    }) }}
+
+  </form>
+
+  </div>
+</div>
+
+{% endblock %}
+

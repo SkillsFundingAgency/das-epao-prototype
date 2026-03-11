@@ -1,0 +1,64 @@
+{% extends "layouts/assessment-service.html" %}
+
+{% block pageTitle %}
+  We cannot find the apprentice details | {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">We cannot find the apprentice details</h1>
+
+    <p class="govuk-body">Check the:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>spelling of the apprentice’s last name</li>
+      <li>ULN is correct for the apprentice</li>
+      <li>Individualised Learner Record (ILR) has been submitted for a privately funded learner (also known as non-funded)</li>
+    </ul>
+
+    <p class="govuk-body">
+      <a href="/v2/record-a-grade">Search again</a>
+    </p>
+
+    {% set apprenticeDetailsHtml %}
+      <p class="govuk-body">
+        The most common reasons we can’t find the apprentice are:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>The apprentice’s details have changed, but the ILR is not up to date</li>
+        <li>The ULN given to you by the training provider does not match what we have in our system</li>
+        <li>This is a privately funded apprenticeship and the training provider needs to create a funding model code 99 record in the ILR.</li>
+      </ul>
+
+      <p class="govuk-body">
+        The correct details need to be agreed between you, the employer and the training provider. The training provider may need to update the ILR before you can create a new certificate request.
+      </p>
+    {% endset %}
+
+    {{ govukDetails({
+      summaryText: "Why we cannot find the apprentice",
+      html: apprenticeDetailsHtml
+    }) }}
+
+    <p class="govuk-body">
+      If you’ve checked the details are correct and we cannot find the details, the version of the standard must be updated in the employer or training provider account.
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
