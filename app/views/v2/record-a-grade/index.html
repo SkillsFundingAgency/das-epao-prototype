@@ -1,4 +1,4 @@
-{% extends "layouts/assessment-service.html" %}
+{% extends "layouts/assessment-service-v1.html" %}
 
 {% block pageTitle %}
   Record a grade | {{ serviceName }} | GOV.UK Prototype Kit
@@ -37,7 +37,9 @@
 
   {% from "govuk/components/input/macro.njk" import govukInput %}
 
-  {{ govukInput({
+  {# OLD PRE-POPPED VALUE WAS "Scarva" #}
+
+{{ govukInput({
     classes: "govuk-!-width-two-thirds",
     label: {
       text: "Last name",
@@ -49,10 +51,11 @@
       },
     id: "last-name",
     name: "lastName",
-    value: data['lastName'] or "Scarva"
+    value: data['lastName']
   }) }}
+{# OLD PRE-POPPED VALUE WAS "661408802113" #}
 
-  {{ govukInput({
+{{ govukInput({
     classes: "govuk-!-width-two-thirds",
     label: {
       text: "Unique learner number",
@@ -64,7 +67,7 @@
       },
     id: "unique-learner-number",
     name: "uniqueLearnerNumber",
-    value: data['uniqueLearnerNumber'] or "661408802113"
+    value: data['uniqueLearnerNumber']
   }) }}
 
   {% from "govuk/components/details/macro.njk" import govukDetails %}
