@@ -51,38 +51,31 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   </div>
   </header>
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
-
+{% set version = prototypeVersion or "v1" %}
 <section aria-label="Service information" class="govuk-service-navigation"
   data-module="govuk-service-navigation">
   <div class="govuk-width-container">
     <div class="govuk-service-navigation__container">
       <div class="govuk-service-navigation__service-name-container">
-        <!-- Version where the service name is  a link
         <span class="govuk-service-navigation__service-name">
-          <a href="/v1" class="govuk-service-navigation__link">
-                {{ serviceName }}
-          </a>
-        </span> -->
-        <!-- version where the service name isn't a link: it'd be nice to A/B test these in some capacity -->
-        <span class="govuk-service-navigation__service-name">
-                {{ serviceName }}
+          {{ serviceName }}
         </span>
       </div>
-    <div class="govuk-service-navigation__user-details-container">
+      <div class="govuk-service-navigation__user-details-container">
         <span class="govuk-service-navigation__user-name govuk-body-s">
-            User Name
+          User Name
         </span>
         <span class="govuk-service-navigation__organisation-name govuk-body-s">
-            <strong>Example organisation name (EPA002113)</strong>
+          <strong>Example organisation name (EPA002113)</strong>
         </span>
-    </div>
-    <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+      </div>
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
         <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden aria-hidden="true">
           Menu
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item">
-            <a class="govuk-service-navigation__link" href="/v1">
+            <a class="govuk-service-navigation__link" href="/{{ version }}">
               Home
             </a>
           </li>
@@ -92,7 +85,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
             </a>
           </li>
           <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="/v1/record-a-grade" aria-current="true">
+            <a class="govuk-service-navigation__link" href="/{{ version }}/record-a-grade" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Record a grade</strong>
             </a>
           </li>
